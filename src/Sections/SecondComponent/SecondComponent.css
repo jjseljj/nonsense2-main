@@ -1,0 +1,100 @@
+.second-component {
+    background: url('/images/2.png') no-repeat center top;
+    background-size: cover;
+    width: 600px;
+    height: 1570px;
+    border: 1px solid #FCFC26;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .second-component__wrapper {
+    width: 468px;
+    height: 594px;
+    margin: 0 auto;
+    position: relative;
+    margin-top: 50px;
+  }
+  
+  .second-component__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.78px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+  }
+  .second-component__actions {
+    background: #E4B832;
+    width: 154px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px; 
+    margin-top: 20px;
+  }
+  
+  .second-component__icon {
+    width: 39px;
+    height: 39px;
+    background: #E4B832;
+    border: 1px solid #E4B832;
+  }
+  .second-component__button {
+    background: #E4B832;
+    border: 1px solid #E4B832;  
+    pointer-events: auto;
+  }
+  @media (max-width: 402px) {
+    .second-component {   
+      background-size: cover;
+      width: 370px;
+      height: 718px;
+      border: 1px solid #FCFC26;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    .second-component__wrapper {
+      width: 307px;
+      height: 530px;
+      margin: 0 auto;
+      position: relative;
+      margin-top: 80px;
+    }
+    
+    .second-component__text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.94px;
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #FFFFFF;
+    }
+    .second-component__actions {
+      background: #E4B832;
+      width: 118.77px;
+      height: 40.1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px; 
+      margin-top: 20px;
+    }
+    
+    .second-component__icon {
+      width: 30px;
+      height: 30px;
+      background: #E4B832;
+      border: 1px solid #E4B832;
+    }
+    .second-component__button {
+      background: #E4B832;
+      border: 1px solid #E4B832;  
+    }
+  }

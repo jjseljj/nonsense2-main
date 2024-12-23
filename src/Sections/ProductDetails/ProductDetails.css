@@ -1,0 +1,1034 @@
+.product-details {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /*background: linear-gradient(
+      90deg,
+      transparent 0%, 
+      transparent 40%, 
+      rgba(16, 137, 201, 0.5) 50%, 
+      #1494D9 60%, 
+      #022231 100%
+    );*/
+    pointer-events: auto;
+  }
+  
+  .header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(13, 127, 187, 0.02) 0%, rgba(16, 137, 201, 0.474806) 20%, #1494D9 60%, #022231 100%);
+    z-index: -1;
+  }
+  
+  .product-details__border {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+    border: 2px solid;
+    border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
+    border-image-slice: 1;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  .product-details__image-wrapper {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important; 
+    /*width: 1177px;
+    height: 1569px;*/
+    /*background: url('/public/1.png') no-repeat center center;*/
+    background-size: cover;
+    pointer-events: none;
+}
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .top-btn1,
+  .top-btn2,
+  .top-btn3 {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .product-details__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .product-details__tab {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  .product-details__wrapper {
+    width: 1054px;
+    height: 772px; /*  872px*/
+    border: 3px solid #E4B832;
+    background: #380F2C;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.product-details__header {
+    width: 533px;
+    height: 69px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-details__tab1 {
+    width: 245px;
+    height: 69px;
+    background: #E4B832;
+    font-family: 'Project Space', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.56px; 
+    text-transform: uppercase;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    border: none;
+    color: #FFFFFF;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .product-details__tab2 {
+    width: 362px;
+    height: 69px;
+    background: #380F2CCC;
+    opacity: 0.8;
+    border: 1px solid #FCFC26;
+    font-family: 'Project Space', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.56px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap; /* Запрет переноса слов */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .product-details__description {
+    width: 1000px;   
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; 
+  }
+  .product-details__content{
+    width: 1000px;       
+  }
+  .product-details__description-title {
+    font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .product-details__description-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30.26px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+    width: 1000px;     
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    text-transform: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.product-details__description-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #FFFFFF;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0;
+  width: 1000px;     
+}
+
+
+.product-details__description-button {
+  width: 444.3px;
+  height: 61.6px;
+  background: #E4B832;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+.product-details__description-button button {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #44171C;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+.product-details__price-name {
+  font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product-details__price-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.product-details__price-amount{
+  font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    width: 150px;
+}
+.product-details__price-description {
+  width: 969px;
+  height: 140px;
+  border: 1px solid #E4B832;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: none;
+  margin-bottom: 20px;
+  pointer-events: auto;
+}
+.product-details__price-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+  resize: none;  
+  font-size: 14px !important;
+  padding: 20px;
+  color: #FFFFFF !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.product-details__price-textarea::placeholder {
+  color: transparent; 
+}
+.product-details__price-actions {
+  display: flex;
+  width: 800px;  
+  justify-content: flex-end;
+  margin-left: auto; 
+  margin-right: 30px;
+  pointer-events: auto;
+}
+
+.price-actions__button-rate {
+  width: 468px;
+  height: 66px;
+  background: #E4B832;
+  color: #380F2C;
+  border-radius: 20px 0 0 20px; 
+  font-family: 'Project Space', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 33.2px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.price-actions__button-empty {
+  width: 501px;
+  height: 66px;
+  background: none;
+  border: 1px solid #E4B832;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+
+.product-details__price-delivery-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.product-details__price-delivery-option > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px; 
+}
+.item {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+ 
+}
+.item2 {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px !important;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: #e4b832; 
+}
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.product-details__price-email {
+  width: 107%;
+  display: flex;
+  flex-direction: row;
+  pointer-events: auto;
+}
+.product-details__email-prefix {
+  width: 487px;
+  height: 66px;
+  border-radius: 20px;
+  border: 1px solid #E4B832;
+  pointer-events: auto;
+}
+.product-details__email-domain{
+  width: 487px;
+  height: 66px;
+  border-radius: 20px;
+  border: 1px solid #E4B832;
+  transform: translateX(-20%) translateY(0%);
+}
+.product-details__email-symbol {
+  width: 109px;
+  height: 66px;
+  border-radius: 10px;
+  background: #E4B832;
+  box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-20%) translateY(0%);
+  pointer-events: auto;
+  font-size: 30px;
+  color: #380F2C;
+}
+.product-details__email-prefix-input {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  pointer-events: auto;
+}
+
+.product-details__email-domain-input {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  pointer-events: auto;
+  margin-left: 70px; 
+  width: 350px;
+}
+.product-details__email-prefix-input:focus,
+.product-details__email-domain-input:focus {
+  outline: none; 
+}
+
+.payment-button__text {
+  width: 251px;
+  height: 62px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #E4B832;
+  font-family: 'Project Space', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.25px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-details__price-icon {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.payment-button__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.product-details__price-actions-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+.payment-button__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 62px;
+  border-radius: 25px;
+  background: #E4B832;
+  box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
+  transform: translateX(-20%) translateY(0%);
+  pointer-events: auto;
+}
+
+.power-icon {
+  width: 31px;
+  height: 31px;
+  color: #fff;
+  color: #380F2C;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+@media (max-width: 402px) {
+  .product-details {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    /*background: linear-gradient(
+      90deg,
+      transparent 0%, 
+      transparent 40%, 
+      rgba(16, 137, 201, 0.5) 50%, 
+      #1494D9 60%, 
+      #022231 100%
+    );*/
+    pointer-events: auto;
+  }
+  
+  .header__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(13, 127, 187, 0.02) 0%, rgba(16, 137, 201, 0.474806) 20%, #1494D9 60%, #022231 100%);
+    z-index: -1;
+  }
+  
+  .product-details__border {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    width: 96%;
+    height: 96%;
+    border: 2px solid;
+    border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
+    border-image-slice: 1;
+    pointer-events: none;
+    z-index: 1;
+    border-radius: 20px;
+  }
+  .product-details__image-wrapper {
+    position: relative;
+    width: 100% !important;
+    height: 100% !important; 
+    /*width: 1177px;
+    height: 1569px;*/
+    /*background: url('/public/1.png') no-repeat center center;*/
+    background-size: cover;
+    pointer-events: none;
+}
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  .top-btn1,
+  .top-btn2,
+  .top-btn3 {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .product-details__header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .product-details__tab {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 20px;
+  }
+  .product-details__wrapper {
+    width: 1054px;
+    height: 772px; /*  872px*/
+    border: 3px solid #E4B832;
+    background: #380F2C;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    opacity: 0.8;
+}
+.product-details__header {
+    width: 533px;
+    height: 69px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-details__tab1 {
+    width: 245px;
+    height: 69px;
+    background: #E4B832;
+    font-family: 'Project Space', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.56px; 
+    text-transform: uppercase;
+    text-decoration-skip-ink: none;
+    text-align: center;
+    border: none;
+    color: #FFFFFF;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .product-details__tab2 {
+    width: 362px;
+    height: 69px;
+    background: #380F2CCC;
+    opacity: 0.8;
+    border: 1px solid #FCFC26;
+    font-family: 'Project Space', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26.56px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap; /* Запрет переноса слов */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    pointer-events: auto;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .product-details__description {
+    width: 1000px;   
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; 
+  }
+  .product-details__content{
+    width: 1000px;       
+  }
+  .product-details__description-title {
+    font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+  }
+  .product-details__description-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30.26px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FFFFFF;
+    width: 1000px;     
+    padding: 20px;
+    box-sizing: border-box;
+    padding: 0;
+    text-transform: none;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.product-details__description-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #FFFFFF;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  margin: 0;
+  width: 1000px;     
+}
+
+
+.product-details__description-button {
+  width: 444.3px;
+  height: 61.6px;
+  background: #E4B832;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20px;
+  margin-left: auto;
+}
+
+.product-details__description-button button {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30.26px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #44171C;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+.product-details__price-name {
+  font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.product-details__price-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.product-details__price-amount{
+  font-family: 'Project Space', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 46.48px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #FCFC26; 
+    width: 1000px;       
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    width: 150px;
+}
+.product-details__price-description {
+  width: 969px;
+  height: 140px;
+  border: 1px solid #E4B832;
+  border-radius: 20px;
+  box-sizing: border-box;
+  background: none;
+  margin-bottom: 20px;
+  pointer-events: auto;
+}
+.product-details__price-textarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+  resize: none;  
+  font-size: 14px !important;
+  padding: 20px;
+  color: #FFFFFF !important;
+  font-family: 'Inter', sans-serif;
+}
+
+.product-details__price-textarea::placeholder {
+  color: transparent; 
+}
+.product-details__price-actions {
+  display: flex;
+  width: 800px;  
+  justify-content: flex-end;
+  margin-left: auto; 
+  margin-right: 30px;
+  pointer-events: auto;
+}
+
+.price-actions__button-rate {
+  width: 468px;
+  height: 66px;
+  background: #E4B832;
+  color: #380F2C;
+  border-radius: 20px 0 0 20px; 
+  font-family: 'Project Space', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 33.2px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.price-actions__button-empty {
+  width: 501px;
+  height: 66px;
+  background: none;
+  border: 1px solid #E4B832;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  cursor: pointer;
+}
+
+
+.product-details__price-delivery-option {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.product-details__price-delivery-option > div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px; 
+}
+.item {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+ 
+}
+.item2 {
+  position: relative;
+  z-index: 10;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 30px !important;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  color: #e4b832; 
+}
+
+.text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.78px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.product-details__price-email {
+  width: 107%;
+  display: flex;
+  flex-direction: row;
+  pointer-events: auto;
+}
+.product-details__email-prefix {
+  width: 487px;
+  height: 66px;
+  border-radius: 20px;
+  border: 1px solid #E4B832;
+  pointer-events: auto;
+}
+.product-details__email-domain{
+  width: 487px;
+  height: 66px;
+  border-radius: 20px;
+  border: 1px solid #E4B832;
+  transform: translateX(-20%) translateY(0%);
+}
+.product-details__email-symbol {
+  width: 109px;
+  height: 66px;
+  border-radius: 10px;
+  background: #E4B832;
+  box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-20%) translateY(0%);
+  pointer-events: auto;
+  font-size: 30px;
+  color: #380F2C;
+}
+.product-details__email-prefix-input {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  pointer-events: auto;
+}
+
+.product-details__email-domain-input {
+  width: 100%;
+  padding: 20px;
+  font-size: 14px;
+  color: #ffffff;
+  border: none;
+  background: none;
+  pointer-events: auto;
+  margin-left: 70px; 
+  width: 350px;
+}
+.product-details__email-prefix-input:focus,
+.product-details__email-domain-input:focus {
+  outline: none; 
+}
+
+.payment-button__text {
+  width: 251px;
+  height: 62px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: 1px solid #E4B832;
+  font-family: 'Project Space', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21.25px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+  color: #ffffff;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.product-details__price-icon {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.payment-button__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+.product-details__price-actions-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+.payment-button__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95px;
+  height: 62px;
+  border-radius: 25px;
+  background: #E4B832;
+  box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
+  transform: translateX(-20%) translateY(0%);
+  pointer-events: auto;
+}
+
+.power-icon {
+  width: 31px;
+  height: 31px;
+  color: #fff;
+  color: #380F2C;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+}
