@@ -356,7 +356,7 @@
     }
   
     .info-component__border {
-      top: 5%; 
+      top: 2%; 
       left: 2%;
       width: 95%;
       height: 95%;
@@ -457,8 +457,7 @@
       width: 100% !important;
       height: 217.41vw; /* 874px */
       /*width: 1368px;
-      height: 951px;*/
-      border: 2px solid;
+      height: 951px;*/     
       border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
       border-image-slice: 1;
       pointer-events: none;

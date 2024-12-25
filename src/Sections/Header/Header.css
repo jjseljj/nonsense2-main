@@ -510,8 +510,7 @@
       width: 100% !important;
       height: 100% !important;
       /*width: 1120px;
-      height: 1474px;*/
-      border: 2px solid;
+      height: 1474px;*/    
       border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
       border-image-slice: 1;    
       pointer-events: none; 
@@ -904,8 +903,7 @@
       width: 100% !important;
       height: 100% !important;
       /*width: 1120px;
-      height: 1474px;*/
-      border: 2px solid;
+      height: 1474px;*/    
       border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
       border-image-slice: 1;    
       pointer-events: none; 
