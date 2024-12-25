@@ -1633,13 +1633,13 @@
   }
   .product-details__wrapper {
     width: 86.57vw; /* 348px */
-    height: 149.25vw; /* 600px */
+    height: 85.25vw; /* 600px */
     border: 3px solid #E4B832;
     background: #380F2C;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    padding: 4.98vw; /* 20px */
+    padding: 2.98vw; /* 20px */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     border-radius: 2.49vw; /* 10px */
     opacity: 0.8;
@@ -1740,79 +1740,80 @@
     white-space: normal;
     margin-top: 3.73vw; /* 15px */
     margin-bottom: 3.73vw; /* 15px */
-}
+  }
 
-.product-details__description-paragraph {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.99vw; /* 12px */
-  font-weight: 400;
-  line-height: 4.54vw; /* 18.26px */
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #FFFFFF;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  margin: 0;
-  width: 100%;
-  max-width: 86.57vw; /* 348px */    
-}
-
-
-.product-details__description-button {
-  width: 43.89vw; /* 176.5px */
-  height: 8.38vw; /* 33.67px */
-  background: #E4B832;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-radius: 2.49vw; /* 10px */
-  margin-left: 0;
-  margin-left: 9.95vw; /* 40px */
-}
-
-.product-details__description-button button {
-  font-family: 'Inter', sans-serif;
-  font-size: 3.48vw; /* 14px */
-  font-weight: 400;
-  line-height: 4.54vw; /* 18.26px */
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #44171C;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-
-.product-details__price-name {
-    font-family: 'Project Space', sans-serif;
-    font-size: 2.49vw !important; /* 10px */
+  .product-details__description-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.99vw; /* 12px */
     font-weight: 400;
-    line-height: 4.87vw; /* 19.56px */
+    line-height: 4.54vw; /* 18.26px */
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #FCFC26; 
-    width: 43.78vw; /* 176px */
-    height: 4.89vw; /* 19.64px */
-    box-sizing: border-box;
+    color: #FFFFFF;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    word-break: break-word;    
-    white-space: nowrap; 
-    margin-top: 2.49vw; /* 10px */
-    margin-bottom: 2.49vw; /* 10px */
-}
-.product-details__price-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 4.98vw; /* 20px */
-}
+    margin: 0;
+    width: 100%;
+    max-width: 86.57vw; /* 348px */    
+  }
+
+
+  .product-details__description-button {
+    width: 43.89vw; /* 176.5px */
+    height: 8.38vw; /* 33.67px */
+    background: #E4B832;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 2.49vw; /* 10px */
+    margin-left: 0;
+    margin-left: 9.95vw; /* 40px */
+  }
+
+  .product-details__description-button button {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.48vw; /* 14px */
+    font-weight: 400;
+    line-height: 4.54vw; /* 18.26px */
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #44171C;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+
+  .product-details__price-name {
+      font-family: 'Project Space', sans-serif;
+      font-size: 2.49vw !important; /* 10px */
+      font-weight: 400;
+      line-height: 4.87vw; /* 19.56px */
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #FCFC26; 
+      width: 43.78vw; /* 176px */
+      height: 4.89vw; /* 19.64px */
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;    
+      white-space: nowrap; 
+      margin-top: 2.49vw; /* 10px */
+      margin-bottom: 2.49vw; /* 10px */
+  }
+  .product-details__price-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3.18vw; /* 20px */
+    height: 4.83vw; /* px */
+  }
 .product-details__price-amount{
     font-family: 'Project Space', sans-serif;
     font-size: 2.49vw; /* 10px */
@@ -1834,12 +1835,12 @@
   }
   .product-details__price-description {
     width: 75.86vw; /* 317px */
-    height: 34.83vw; /* 140px */
+    height: 20.83vw; 
     border: 1px solid #E4B832;
     border-radius: 1.63vw; /* 6.55px */
     box-sizing: border-box;
     background: none;
-    margin-bottom: 4.98vw; /* 20px */
+    margin-bottom: 2.98vw; /* 10px */
     pointer-events: auto;
   }
   .product-details__price-textarea {
@@ -1850,8 +1851,8 @@
     color: inherit;
     outline: none;
     resize: none;  
-    font-size: 2.49vw; /* 10px */
-    padding: 2.49vw; /* 10px */
+    font-size: 2vw !important; /* 12px */
+    padding: 1.49vw; /* 10px */
     color: #FFFFFF !important;
     font-family: 'Inter', sans-serif;
   }
@@ -1904,8 +1905,8 @@
 
 
   .product-details__price-delivery-option > div {
-    margin-top: 2.49vw; /* 10px */
-    margin-bottom: 2.49vw; /* 10px */
+    margin-top: 1.49vw; 
+    margin-bottom: 1.49vw; 
     display: flex;
     align-items: center;
     column-gap: 5px; 
@@ -1927,18 +1928,17 @@
     margin-bottom: 1.24vw; /* 5px */
     gap: 1.24vw; /* 5px */
   }
-
   .icon {
-    width: 5.2vw; /* 20.9px */
-    height: 5.2vw; /* 20.9px */
+    width: 3.2vw; /* 20.9px */
+    height: 3.2vw; /* 20.9px */
     color: #e4b832; 
   }
 
   .text {
     font-family: 'Inter', sans-serif;
-    font-size: 2.75vw; /* 11.04px */
+    font-size: 11.04px !important; /* 11.04px */
     font-weight: 400;
-    line-height: 3.33vw; /* 13.39px */
+    line-height: 3.33vw !important; /* 13.39px */
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -1950,8 +1950,8 @@
     display: flex;
     flex-direction: row;
     pointer-events: auto;
-    margin-top: 4.98vw; /* 20px */
-    margin-bottom: 4.98vw; /* 20px */
+    margin-top: 0vw; 
+    margin-bottom: 0vw; 
   }
   .product-details__email-prefix {
     width: 37.31vw; /* 150px */
@@ -2008,7 +2008,7 @@
 
   .payment-button__text {
     width: 43.89vw; /* 176.5px */
-    height: 8.38vw; /* 33.67px */
+    height: 6.38vw !important; 
     border-top-left-radius: 2.7vw; /* 10.86px */
     border-bottom-left-radius: 2.7vw; /* 10.86px */
     border: 1px solid #E4B832;
@@ -2034,14 +2034,14 @@
     padding: 0;
     margin: 0;
     cursor: pointer;
-    pointer-events: auto;
+    pointer-events: auto;    
   }
   .payment-button__content {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 43.89vw; /* 176.5px */
-    height: 8.38vw; /* 33.67px */
+    height: 6.38vw !important; 
     margin: 0 auto;
   }
   .product-details__price-actions-bottom{
@@ -2052,14 +2052,14 @@
     height: 100%;
     margin: 0 auto;
     pointer-events: auto;
-    margin-top: 4.98vw; /* 20px */
+    margin-top: 0.98vw; 
   }
   .payment-button__icon {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 12.84vw; /* 51.59px */
-    height: 8.38vw; /* 33.67px */
+    height: 6.38vw !important; /* 33.67px */
     border-radius: 2.7vw; /* 10.86px */
     background: #E4B832;
     box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
@@ -2153,7 +2153,7 @@
   }
   .product-details__wrapper {
     width: 86.57vw; /* 348px */
-    height: 149.25vw; /* 600px */
+    height: 125.25vw; /* 600px */
     border: 3px solid #E4B832;
     background: #380F2C;
     margin: 0 auto;
@@ -2225,9 +2225,9 @@
   }
   .product-details__description-title {
     font-family: 'Project Space', sans-serif;
-    font-size: 2.67vw; /* 10.73px */
+    font-size: 2.67vw !important; /* 10.73px */
     font-weight: 400;
-    line-height: 4.37vw; /* 17.56px */
+    line-height: 5.5vw; /* 17.56px */
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -2243,7 +2243,7 @@
     font-family: 'Inter', sans-serif;
     font-size: 2.49vw; /* 10px */
     font-weight: 400;
-    line-height: 2.55vw; /* 10.26px */
+    line-height: 1.55vw; /* 10.26px */
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
@@ -2260,79 +2260,80 @@
     white-space: normal;
     margin-top: 3.73vw; /* 15px */
     margin-bottom: 3.73vw; /* 15px */
-}
+  }
 
-.product-details__description-paragraph {
-  font-family: 'Inter', sans-serif;
-  font-size: 2.99vw; /* 12px */
-  font-weight: 400;
-  line-height: 4.54vw; /* 18.26px */
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #FFFFFF;
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  margin: 0;
-  width: 100%;
-  max-width: 86.57vw; /* 348px */    
-}
-
-
-.product-details__description-button {
-  width: 43.89vw; /* 176.5px */
-  height: 8.38vw; /* 33.67px */
-  background: #E4B832;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-radius: 2.49vw; /* 10px */
-  margin-left: 0;
-  margin-left: 9.95vw; /* 40px */
-}
-
-.product-details__description-button button {
-  font-family: 'Inter', sans-serif;
-  font-size: 3.48vw; /* 14px */
-  font-weight: 400;
-  line-height: 4.54vw; /* 18.26px */
-  text-align: left;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
-  color: #44171C;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-transform: uppercase;
-}
-
-
-.product-details__price-name {
-    font-family: 'Project Space', sans-serif;
-    font-size: 2.49vw !important; /* 10px */
+  .product-details__description-paragraph {
+    font-family: 'Inter', sans-serif;
+    font-size: 2.29vw; /* 12px */
     font-weight: 400;
-    line-height: 4.87vw; /* 19.56px */
+    line-height: 3.54vw; /* 18.26px */
     text-align: left;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
-    color: #FCFC26; 
-    width: 43.78vw; /* 176px */
-    height: 4.89vw; /* 19.64px */
-    box-sizing: border-box;
+    color: #FFFFFF;
     overflow-wrap: break-word;
     word-wrap: break-word;
-    word-break: break-word;    
-    white-space: nowrap; 
-    margin-top: 2.49vw; /* 10px */
-    margin-bottom: 2.49vw; /* 10px */
-}
-.product-details__price-section {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: 4.98vw; /* 20px */
-}
+    margin: 0;
+    width: 100%;
+    max-width: 86.57vw; /* 348px */    
+  }
+
+
+  .product-details__description-button {
+    width: 43.89vw; /* 176.5px */
+    height: 8.38vw; /* 33.67px */
+    background: #E4B832;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border-radius: 2.49vw; /* 10px */
+    margin-left: 0;
+    margin-left: 9.95vw; /* 40px */
+  }
+
+  .product-details__description-button button {
+    font-family: 'Inter', sans-serif;
+    font-size: 3.48vw; /* 14px */
+    font-weight: 400;
+    line-height: 4.54vw; /* 18.26px */
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    color: #44171C;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+
+  .product-details__price-name {
+      font-family: 'Project Space', sans-serif;
+      font-size: 2.49vw !important; /* 10px */
+      font-weight: 400;
+      line-height: 4.87vw; /* 19.56px */
+      text-align: left;
+      text-underline-position: from-font;
+      text-decoration-skip-ink: none;
+      color: #FCFC26; 
+      width: 43.78vw; /* 176px */
+      height: 4.89vw; /* 19.64px */
+      box-sizing: border-box;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      word-break: break-word;    
+      white-space: nowrap; 
+      margin-top: 2.49vw; /* 10px */
+      margin-bottom: 2.49vw; /* 10px */
+  }
+  .product-details__price-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 3.18vw; /* 20px */
+    height: 4.83vw; /* px */
+  }
 .product-details__price-amount{
     font-family: 'Project Space', sans-serif;
     font-size: 2.49vw; /* 10px */
@@ -2370,8 +2371,9 @@
     color: inherit;
     outline: none;
     resize: none;  
-    font-size: 2.49vw; /* 10px */
-    padding: 2.49vw; /* 10px */
+    font-size: 2vw !important; /* 12px */
+
+    padding: 1.49vw; /* 10px */
     color: #FFFFFF !important;
     font-family: 'Inter', sans-serif;
   }
@@ -2470,8 +2472,8 @@
     display: flex;
     flex-direction: row;
     pointer-events: auto;
-    margin-top: 4.98vw; /* 20px */
-    margin-bottom: 4.98vw; /* 20px */
+    margin-top: 2.98vw; /* 20px */
+    margin-bottom: 2.98vw; /* 20px */
   }
   .product-details__email-prefix {
     width: 37.31vw; /* 150px */
@@ -2572,7 +2574,7 @@
     height: 100%;
     margin: 0 auto;
     pointer-events: auto;
-    margin-top: 4.98vw; /* 20px */
+    margin-top: 2.98vw; /* 20px */
   }
   .payment-button__icon {
     display: flex;
