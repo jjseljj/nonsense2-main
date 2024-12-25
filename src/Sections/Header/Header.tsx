@@ -118,11 +118,11 @@ const Header = () => {
             )}
 
           {/* Кнопка снизу */}
-          <div className="header-bottom">
+          {/*<div className="header-bottom">
             <button className="bottom-btn">
                 <img src="/стрелка.png" alt="Стрелка" className="bottom-btn__icon" />
             </button>
-          </div>
+          </div>*/}
 
         </div>
       </div>

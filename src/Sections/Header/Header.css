@@ -5,25 +5,38 @@
     /*width: 1177px;
     height: 1569px;*/
     overflow: hidden;
-    background: linear-gradient(
+    /*background: linear-gradient(
         90deg,
         transparent 0%,  
         transparent 40%,  
         rgba(16, 137, 201, 0.5) 50%, 
         #1494D9 60%,      
         #022231 100%     
-    );
+    );*/
 }  
   .header__background {
     position: absolute;
     object-fit: cover; 
     top: 0;
     left: 0;
-    width: 1177px; 
-    height: 100vh !important; 
+    width: 100%; /* Растянуть на всю ширину */
+    height: 100%; /* Растянуть на всю высоту */
+    z-index: 1;    
+    background-size: cover; 
     background: linear-gradient(90deg, rgba(13, 127, 187, 0.02) 0%, rgba(16, 137, 201, 0.474806) 20%, #1494D9 60%, #022231 100%);
     z-index: 2;
+    transform: scale(1.1); 
+ 
   }
+  .header__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: 1;
+}
 
   .header__content {
     position: absolute;
@@ -42,13 +55,46 @@
       height: 100% !important;
       /*width: 1120px;
       height: 1474px;*/
-      border: 2px solid;
-      border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
+      
+      border-image-source: linear-gradient(
+      to right,
+      #FCFC26 0%,
+      #ED77A9 40%,
+      transparent 50%, /* Разрыв в линии */
+      transparent 50%,
+      #ED77A9 80%,
+      #FCFC26 100%
+    );
       border-image-slice: 1;    
       pointer-events: none; 
       z-index: 1;
-      border-radius: 1.06vw; /* 20px */
+      border-radius: 1.06vw !important; /* 20px */     
     }
+    .header__border::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: inherit; /* Наследуем радиус из .header__border */
+      background: linear-gradient(
+          to right,
+          #FCFC26 0%,
+          #ED77A9 40%,
+          transparent 50%, /* Разрыв в линии */
+          transparent 60%, 
+          #ED77A9 80%,
+          #FCFC26 100%
+      );
+      mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: xor;
+      border: 2px solid transparent; /* Без влияния на фон */
+      box-sizing: border-box;
+      pointer-events: none; /* Исключаем из кликов */
+  }
     /*.header__border {
       position: absolute;
       top: 50px;
@@ -84,14 +130,14 @@
     }
     
     .top-btn1 {
-      width: 75px !important; 
+      width: 105px !important; 
       height: 75px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(0%) translateY(0%);
+      transform: translateX(-50%) translateY(-40%);
       z-index: 2;
       pointer-events: auto;
     }
@@ -103,14 +149,14 @@
     }
     
     .top-btn2 {
-      width: 151px; 
-      height: 58.23px; 
+      width: 151px !important; 
+      height: 58.23px !important; 
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(0%) translateY(0%);
+      transform: translateX(0%) translateY(-80%);
       position: relative;
       z-index: 10000; 
       background-color: transparent;
@@ -125,14 +171,14 @@
       }
       
     .top-btn3 {
-      width: 75px !important; 
+      width: 105px !important; 
       height: 75px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(0%) translateY(0%);
+      transform: translateX(50%) translateY(-40%);
       z-index: 2;
       pointer-events: auto;
     }
@@ -256,7 +302,7 @@
       background-color: #340233;
       position: absolute;
       top: 22.23vw; /* 418px */
-      left: 91.8vw; /* 1725px */
+      left: 89.8vw; /* 1725px */
       border-top-left-radius: 20%;
       border-bottom-left-radius: 20%;
       border-top-right-radius: 0;
@@ -412,12 +458,12 @@
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    /*justify-content: center; 
     align-items: center;     
-    position: relative;
+    position: relative;*/
     z-index: 10;
     pointer-events: auto;
-    transform: translateX(00%) translateY(-5%);
+   /* transform: translateX(00%) translateY(-5%);*/
   }
   
   @media (max-width:600px) {
