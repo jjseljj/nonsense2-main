@@ -27,15 +27,19 @@ const Header = () => {
   const itemsPerPage = 4; 
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-    console.log("Событие сработало:", e.deltaY);
-    console.log("Скролл", e.deltaY);
-    console.log("Текущий индекс:", startIndex);
-    if (e.deltaY > 0 && startIndex + itemsPerPage < services.length) {
-      setStartIndex((prev) => Math.min(prev + 1, services.length - itemsPerPage));
-    } else if (e.deltaY < 0 && startIndex > 0) {
-      setStartIndex((prev) => Math.max(prev - 1, 0));
-    }
-  }; 
+      const scrollSpeedFactor = 0.5; 
+
+      if (e.deltaY > 0 && startIndex + itemsPerPage < services.length) {
+          setStartIndex((prev) =>
+              Math.min(prev + Math.ceil(scrollSpeedFactor), services.length - itemsPerPage)
+          );
+      } else if (e.deltaY < 0 && startIndex > 0) {
+          setStartIndex((prev) =>
+              Math.max(prev - Math.ceil(scrollSpeedFactor), 0)
+          );
+      }
+  };
+
   
   
 
