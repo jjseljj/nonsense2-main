@@ -401,7 +401,7 @@
   position: fixed;
   top: 5%;
   right: 0;
-  width: 550px;
+  width: 28.65vw; /* 550px в viewport width */
   height: 90%;   
   z-index: 1050;
   animation: slideIn 0.3s ease-out;
@@ -781,55 +781,19 @@
     }    
   
   
-    .modal {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.1);   
-      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-      border: 4px solid transparent;
-      border-image-source: linear-gradient(208.21deg, #fcfc26 0.43%, #ed77a9 99.49%);
-      border-image-slice: 1;
-      animation: slideIn 0.3s ease-out;
-      overflow-y: auto;
-      z-index: 1050;      
-      backdrop-filter: none;
-      filter: none;
-      box-shadow: none;
-    }
-    .modal-overlay {
-      display: none;
-    }
-    
-    .modal.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    @keyframes slideIn {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
-    
-    .modal__content {
-      padding: 3.33vw; /* 20px */
-      height: 100%;
-      overflow-y: auto;
-    }
-    
-    .header::before {      
-      display: none !important;
-    }
-    
-    .header.modal-open::before {
-      display: block;
-    }  
-  
+     
+  /* Стиль для модального окна сбоку */
+.modal {
+  position: fixed;
+  top: 5%;
+  right: 0;
+  width: 28.65vw; /* 550px в viewport width */
+  height: 90%;   
+  z-index: 1050;
+  animation: slideIn 0.3s ease-out;
+  overflow: hidden;
+  border-radius: 20px !important;
+}
   
     /* Стиль для модального окна логотипа */
     .modal-logo {
@@ -842,7 +806,7 @@
       border-radius: 1.33vw; /* 8px */
       z-index: 1050;
       width: 50vw; /* 300px */
-      padding: 3.33vw; /* 20px */
+      padding: 0 1.67vw !important; /* 20px */
     }    
     .modal-logo__content {
       text-align: center;

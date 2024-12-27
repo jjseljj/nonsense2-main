@@ -92,17 +92,23 @@
   }
   
   .info-top-btn1 {
-    width: 3.91vw; /* 75px */
-    height: 3.91vw; /* 75px */
+    width: 105px !important; 
+    height: 75px !important;
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
-    transform: translateX(-30%) translateY(-20%);
+    transform: translateX(-50%) translateY(-40%);
     z-index: 2;
+    pointer-events: auto;
   }
-  
+  .info-top-btn1 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
   .info-top-btn2 {
     width: 7.86vw; /* 151px */
     height: 3.03vw; /* 58.23px */
@@ -111,24 +117,31 @@
     justify-content: center;
     background: none;
     border: none;
-    transform: translateX(200%) translateY(-50%);
+    transform: translateX(50%) translateY(-50%);
     position: relative;
     z-index: 2;
     background-color: transparent;
+    pointer-events: auto;
   }
-  
+ 
   .info-top-btn3 {
-    width: 27.76vw !important; /* 533px */
-    height: 3.59vw !important; /* 69px */
+    width: 105px !important; 
+    height: 75px !important;
     display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
-    transform: translateX(52%) translateY(-20%) !important;
+    transform: translateX(60%) translateY(-40%) !important;
     z-index: 2;
+    pointer-events: auto;
   }
-  
+  .info-top-btn3 img {
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+  }
   .info-component__content {
     position: absolute;
     top: 14%;
@@ -290,6 +303,7 @@
       border: none;
       transform: translateX(40%) translateY(-10%) !important;
       z-index: 2;
+      pointer-events: auto;
     }
     
     .info-top-btn2 {
@@ -304,6 +318,7 @@
       position: relative;
       z-index: 2;
       background-color: transparent;
+      pointer-events: auto;
     }
     
     .info-top-btn3 {
@@ -316,6 +331,7 @@
       border: none;
       transform: translateX(38%) translateY(-10%) !important;
       z-index: 2;
+      pointer-events: auto;
     }
     
   
@@ -407,6 +423,7 @@
       border: none;
       transform: translateX(-30%) translateY(-30%) !important;
       z-index: 2;
+      pointer-events: auto;
     }
     .info-top-btn1 img {
       display: block;
@@ -427,6 +444,7 @@
       position: relative;
       z-index: 2;
       background-color: transparent;
+      pointer-events: auto;
     }
     .info-top-btn2 img {
       display: block;
@@ -446,6 +464,7 @@
       position: relative;
       transform: translateX(30%) translateY(-30%) !important;
       z-index: 2;
+      pointer-events: auto;
     }
     .info-top-btn3 img {
       display: block;
@@ -545,7 +564,66 @@
       line-height: 2.67vw; /* 16px */ 
     }
   }
-  
+  @media (max-width: 430px) {
+    .info-component__content {
+      position: absolute;
+      top: 40%;
+      left: 45%;
+      width: 100%;
+      height: 100%;
+      z-index: 2;    
+    /*transform: translate(0%, 0%); */
+  }
+  .info-content__block3 {
+    width: 50vw; /* 237.25px */
+    height: 88vw; /* 389px */
+    background: #340233;
+    border: 0.26px solid #E4B832 !important;    
+    padding: 2.49vw; /* 10px */
+    box-sizing: border-box;
+  }
+  .info-content__block1 {
+    width: 55vw; /* 300px */
+    height: 6.67vw; /* 40px */
+    margin-bottom: 1.67vw; /* 10px */
+    transform: translateX(-10%) translateY(0%);
+  }
+  .info-block1__child1 {
+    width: 25.67vw !important; /* 130px */
+    height: 6.67vw; /* 40px */
+    transform: translateX(20%) translateY(0%);
+  }
+  }
+  @media (max-width: 414px) {
+    .info-component__content {
+      position: absolute;
+      top: 30%;
+      left: 45%;
+      width: 100%;
+      height: 100%;
+      z-index: 2;    
+    /*transform: translate(0%, 0%); */
+  }
+  .info-content__block3 {
+    width: 50vw; /* 237.25px */
+    height: 88vw; /* 389px */
+    background: #340233;
+    border: 0.26px solid #E4B832 !important;    
+    padding: 2.49vw; /* 10px */
+    box-sizing: border-box;
+  }
+  .info-content__block1 {
+    width: 55vw; /* 300px */
+    height: 6.67vw; /* 40px */
+    margin-bottom: 1.67vw; /* 10px */
+    transform: translateX(-10%) translateY(0%);
+  }
+  .info-block1__child1 {
+    width: 25.67vw !important; /* 130px */
+    height: 6.67vw; /* 40px */
+    transform: translateX(20%) translateY(0%);
+  }
+  }
   @media (max-width: 402px) {
     .info-component {
       /*width: 1440px;*/
