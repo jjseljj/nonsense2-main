@@ -1,7 +1,7 @@
 .logo-modal {
     width: 60.16vw; /* 1155px */
     height: 42.39vw; /* 814px */
-    border: 7px solid #FCFC26;
+    border: 2px solid #FCFC26;
     background: #380F2C;
     position: absolute;
     top: 0;
@@ -9,6 +9,7 @@
     transform: translateX(-50%);
     display: flex;    
     flex-direction: column;
+    border-radius: 10px;
   }
   .logo-container {
     width: 7.86vw; /* 151px */

@@ -23,12 +23,12 @@ const handleLogoClick = () => {
           {/* Кнопки сверху */}
           <div className="info-component__top-buttons">
             <Link href="/Product">
-              <button className="top-btn1">
+              <button className="info-top-btn1">
                   <img src="/Поделиться.png" alt="Поделиться" />
               </button>  
             </Link>
 
-            <div className="top-btn2" onClick={handleLogoClick}>
+            <div className="info-top-btn2" onClick={handleLogoClick}>
                 <img src="/лого.png" alt="Лого" />
             </div>
             
@@ -43,7 +43,7 @@ const handleLogoClick = () => {
             </div>
             )}     
 
-            <button className="top-btn3">
+            <button className="info-top-btn3">
                 <Link href="/Info">
                     <img src="/Информация.png" alt="Информация" />
                 </Link>

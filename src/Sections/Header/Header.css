@@ -54,18 +54,9 @@
       width: 100% !important;
       height: 100% !important;
       /*width: 1120px;
-      height: 1474px;*/
-      
-      border-image-source: linear-gradient(
-      to right,
-      #FCFC26 0%,
-      #ED77A9 40%,
-      transparent 50%, /* Разрыв в линии */
-      transparent 50%,
-      #ED77A9 80%,
-      #FCFC26 100%
-    );
-      border-image-slice: 1;    
+      height: 1474px;*/      
+     
+      border-image-slice: 1;      
       pointer-events: none; 
       z-index: 1;
       border-radius: 1.06vw !important; /* 20px */     
@@ -87,13 +78,15 @@
           #ED77A9 80%,
           #FCFC26 100%
       );
+      border-top: none;
       mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
       mask-composite: exclude;
       -webkit-mask-composite: xor;
-      border: 2px solid transparent; /* Без влияния на фон */
+      border: 2px solid transparent; 
       box-sizing: border-box;
-      pointer-events: none; /* Исключаем из кликов */
+      pointer-events: none;
+      
   }
     /*.header__border {
       position: absolute;
@@ -194,9 +187,11 @@
   .side-btn3, 
   .side-btn4, 
   .side-btn5, 
-  .side-btn6{
+  .side-btn6,
+  .side-btn7,
+  .side-btn8{
       width: 30.37vw !important; /* 571px */
-      height: 6.54vw !important; /* 123px */
+      height: 5.75vw !important; /* 82.84px */
       background: #340233;
       color: #ffffff;
       display: flex;
@@ -328,7 +323,9 @@
     .side-btn__dot3, 
     .side-btn__dot4, 
     .side-btn__dot5, 
-    .side-btn__dot6 {
+    .side-btn__dot6,
+    .side-btn__dot7,
+    .side-btn__dot8  {
       width: 1.33vw; /* 25px */
       height: 1.33vw; /* 25px */
       color: #FCFC26;     
@@ -359,77 +356,58 @@
       transform: translateX(1550%) translateY(70%);
       z-index: 10; 
     }
-    
+    .side-btn__dot5 {
+      position: absolute;
+      transform: translateX(1550%) translateY(70%);
+      z-index: 10; 
+    }
+    .side-btn__dot6 {
+      position: absolute;
+      transform: translateX(1550%) translateY(70%);
+      z-index: 10; 
+    }
+    .side-btn__dot7 {
+      position: absolute;
+      transform: translateX(1550%) translateY(70%);
+      z-index: 10; 
+    }
+    .side-btn__dot8 {
+      position: absolute;
+      transform: translateX(1550%) translateY(70%);
+      z-index: 10; 
+    }
    
      
-    .button-with-dot1,
+  .button-with-dot1,
   .button-with-dot2,
   .button-with-dot3,
   .button-with-dot4,
   .button-with-dot5,
-  .button-with-dot6 {
+  .button-with-dot6,
+  .button-with-dot7, 
+  .button-with-dot8 {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin-bottom: 0.78vw; /* 15px */
-  width: 29.74vw; /* 571px */
-  height: 6.41vw; /* 123px */
+    width: 29.74vw; /* 571px */
+    height: 6.41vw; /* 123px */
   }
   
   
   
-  .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 50%; 
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.1);   
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
-    border: 4px solid transparent;
-    border-image-source: linear-gradient(208.21deg, #fcfc26 0.43%, #ed77a9 99.49%);
-    border-image-slice: 1;
-    animation: slideIn 0.3s ease-out;
-    overflow-y: auto;
-    z-index: 1050;
-  }
-  
-  .modal.hidden {
-    opacity: 0;
-    pointer-events: none;
-  }
-  @keyframes slideIn {
-    from {
-      transform: translateX(100%);
-    }
-    to {
-      transform: translateX(0);
-    }
-  }
-  
-  .modal__content {
-    padding: 0px;
-    height: 100%;
-    overflow-y: auto;
-  }
-  
-  .header::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 50%; /* Размытие только на половину экрана */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    display: none;
-  }
-  
-  .header.modal-open::before {
-    display: block;
-  }
-  
-
+  /* Стиль для модального окна сбоку */
+.modal {
+  position: fixed;
+  top: 5%;
+  right: 0;
+  width: 550px;
+  height: 90%;   
+  z-index: 1050;
+  animation: slideIn 0.3s ease-out;
+  overflow: hidden;
+  border-radius: 20px !important;
+}
 
   /* Стиль для модального окна логотипа */
 .modal-logo {
@@ -437,18 +415,16 @@
     top: 0%;
     left: 50%;
     transform: translate(-50%, 0);
-    background: rgba(255, 255, 255, 0.9);
-    border: 1px solid #ccc;
-    border-radius: 8px;
     z-index: 1050;
     width: 300px;
     padding: 20px;
+    border-radius: 20px !important;
   }
-  
+
+
   .modal-logo__content {
     text-align: center;
   }
-
 
   
   .header-scroll {
@@ -537,14 +513,14 @@
     }
     
     .top-btn1 {
-      width: 35.01px;
-      height: 32.7px;
+      width: 75.01px !important;
+      height: 72.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(-30%) translateY(-20%);
+      transform: translateX(-50%) translateY(-60%);
       z-index: 2;
       pointer-events: auto;
     }
@@ -556,14 +532,14 @@
     }
     
     .top-btn2 {
-      width: 151px; 
-      height: 58.23px; 
+      width: 151px !important; 
+      height: 58.23px !important; 
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(0%) translateY(-20%);
+      transform: translateX(0%) translateY(-80%);
       position: relative;
       z-index: 10000; 
       background-color: transparent;
@@ -578,14 +554,14 @@
     }
       
     .top-btn3 {
-      width: 35.01px;
-      height: 32.7px;
+      width: 75.01px !important;
+      height: 72.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(20%) translateY(-20%);
+      transform: translateX(47%) translateY(-60%);
       z-index: 2;
       pointer-events: auto;
     }
@@ -601,9 +577,11 @@
     .side-btn3, 
     .side-btn4, 
     .side-btn5, 
-    .side-btn6{
+    .side-btn6,
+    .side-btn7,
+    .side-btn8 {
       width: 86.46vw !important; /* 347.44px */
-      height: 20.61vw !important; /* 82.84px */
+      height: 15.4vw !important; /* 82.84px */
       background: #340233;
       color: #ffffff;
       display: flex;
@@ -614,13 +592,17 @@
       border-radius: 1.99vw; /* 11.92px */
       font-size: 0.85vw; /* 16px */
       cursor: pointer;
-      padding: 2.13vw; /* 40px */      
+      padding: 0 1.39vw !important;
     }
     .side-btn1,
     .side-btn2,
     .side-btn3,
-    .side-btn4 {
-      transform: none;
+    .side-btn4,
+    .side-btn5,
+    .side-btn6, 
+    .side-btn7,
+    .side-btn8 {
+      transform: none !important;
     }  
   
     
@@ -727,7 +709,9 @@
     .side-btn__dot3, 
     .side-btn__dot4, 
     .side-btn__dot5, 
-    .side-btn__dot6 {
+    .side-btn__dot6,
+    .side-btn__dot7,
+    .side-btn__dot8 {
       width: 3.71vw; /* 14.9px */
       height: 3.71vw; /* 14.9px */
       color: #FCFC26;     
@@ -737,25 +721,45 @@
 
     .side-btn__dot1 {
       position: absolute;
-      transform: translateX(2270%) translateY(0%);
+      transform: translateX(2200%) translateY(0%);
       z-index: 10; 
     }
     
     .side-btn__dot2 {
       position: absolute;
-      transform: translateX(2270%) translateY(0%);
+      transform: translateX(2200%) translateY(0%);
       z-index: 10; 
     }
     
     .side-btn__dot3 {
       position: absolute;
-      transform: translateX(2270%) translateY(0%);
+      transform: translateX(2200%) translateY(0%);
       z-index: 10; 
     }
     
     .side-btn__dot4 {
       position: absolute;
-      transform: translateX(2270%) translateY(0%);
+      transform: translateX(2200%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot5 {
+      position: absolute;
+      transform: translateX(2200%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot6 {
+      position: absolute;
+      transform: translateX(2200%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot7 {
+      position: absolute;
+      transform: translateX(2200%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot8 {
+      position: absolute;
+      transform: translateX(2200%) translateY(0%);
       z-index: 10; 
     }  
    
@@ -765,7 +769,9 @@
     .button-with-dot3,
     .button-with-dot4,
     .button-with-dot5,
-    .button-with-dot6 {
+    .button-with-dot6,
+    .button-with-dot7,
+    .button-with-dot8 {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -844,7 +850,7 @@
     
     .header-scroll {
       width: 100%;
-      height: 100vh;
+      height: auto;
       overflow-y: auto; 
       overflow-x: hidden;
       display: flex;
@@ -854,9 +860,9 @@
       position: relative;
       z-index: 10;
       pointer-events: auto;
-      transform: translateX(-15%) translateY(0%);
-      gap: 7vw; /* 30px */
+      transform: translateX(-15%) translateY(-4%);    
       overflow: visible; 
+      gap: 0.5vw !important; /* 2px */
     }      
     .header-icon {
       display: block; /* Иконка по умолчанию */
@@ -930,14 +936,14 @@
     }
     
     .top-btn1 {
-      width: 35.01px;
-      height: 32.7px;
+      width: 55.01px !important;
+      height: 52.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(-30%) translateY(-20%);
+      transform: translateX(-50%) translateY(-60%);
       z-index: 2;
       pointer-events: auto;
     }
@@ -949,14 +955,14 @@
     }
     
     .top-btn2 {
-      width: 151px; 
-      height: 58.23px; 
+      width: 151px !important; 
+      height: 58.23px !important; 
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(0%) translateY(-20%);
+      transform: translateX(0%) translateY(-60%);
       position: relative;
       z-index: 10000; 
       background-color: transparent;
@@ -971,20 +977,20 @@
     }
       
     .top-btn3 {
-      width: 35.01px;
-      height: 32.7px;
+      width: 55.01px !important;
+      height: 52.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
-      transform: translateX(20%) translateY(-20%);
+      transform: translateX(50%) translateY(-60%);
       z-index: 2;
       pointer-events: auto;
     }
     .top-btn3 img {
       display: block;
-      width: 100%;
+      width: 100% !important;
       height: auto;
       cursor: pointer;
     }  
@@ -994,9 +1000,11 @@
     .side-btn3, 
     .side-btn4, 
     .side-btn5, 
-    .side-btn6{
+    .side-btn6,
+    .side-btn7,
+    .side-btn8 {
       width: 86.46vw !important; /* 347.44px */
-      height: 20.61vw !important; /* 82.84px */
+      height: 18.61vw !important; /* 82.84px */
       background: #340233;
       color: #ffffff;
       display: flex;
@@ -1012,7 +1020,11 @@
     .side-btn1,
     .side-btn2,
     .side-btn3,
-    .side-btn4 {
+    .side-btn4,
+    .side-btn5,
+    .side-btn6,
+    .side-btn7,
+    .side-btn8 {
       transform: none;
     }  
   
@@ -1120,7 +1132,9 @@
     .side-btn__dot3, 
     .side-btn__dot4, 
     .side-btn__dot5, 
-    .side-btn__dot6 {
+    .side-btn__dot6,
+    .side-btn__dot7,
+    .side-btn__dot8 {
       width: 3.71vw; /* 14.9px */
       height: 3.71vw; /* 14.9px */
       color: #FCFC26;     
@@ -1151,6 +1165,26 @@
       transform: translateX(2270%) translateY(0%);
       z-index: 10; 
     }  
+    .side-btn__dot5 {
+      position: absolute;
+      transform: translateX(2270%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot6 {
+      position: absolute;
+      transform: translateX(2270%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot7 {
+      position: absolute;
+      transform: translateX(2270%) translateY(0%);
+      z-index: 10; 
+    }  
+    .side-btn__dot8 {
+      position: absolute;
+      transform: translateX(2270%) translateY(0%);
+      z-index: 10; 
+    }  
    
      
     .button-with-dot1,
@@ -1158,11 +1192,13 @@
     .button-with-dot3,
     .button-with-dot4,
     .button-with-dot5,
-    .button-with-dot6 {
+    .button-with-dot6,
+    .button-with-dot7,
+    .button-with-dot8 {
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin-bottom: 3.73vw; /* 15px */
+      margin-bottom: 1.73vw; 
       width: 88.94vw !important; /* 357.44px */
       height: 20.61vw !important; /* 82.84px */
     }    
@@ -1237,7 +1273,7 @@
     
     .header-scroll {
       width: 100%;
-      height: 100vh;
+      height: auto;
       overflow-y: auto; 
       overflow-x: hidden;
       display: flex;
@@ -1247,8 +1283,8 @@
       position: relative;
       z-index: 10;
       pointer-events: auto;
-      transform: translateX(0%) translateY(0%);
-      gap: 0.5vw !important; /* 2px */
+      transform: translateX(0%) translateY(-3%);
+      gap: 0vw !important; /* 2px */     
     }      
     .header-icon {
       display: block; /* Иконка по умолчанию */

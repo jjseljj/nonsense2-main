@@ -2,10 +2,12 @@
     background: url('/images/2.png') no-repeat center top;
     background-size: cover;
     width: 31.25vw; /* 600px */
-    height: 81.77vw; /* 1570px */
-    border: 1px solid #FCFC26;
+    height: 90vh !important; /* 1570px */
+    border: 2px solid #FCFC26;
+    border-radius: 20px;
     margin: 0 auto;
-    position: relative;
+    position: relative; 
+    overflow: hidden;  
   }
   
   .second-component__wrapper {

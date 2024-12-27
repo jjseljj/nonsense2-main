@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BiDownArrow } from "react-icons/bi";
 import { IoIosArrowBack } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
@@ -7,6 +7,7 @@ import SecondComponent from "@/Sections/SecondComponent/SecondComponent";
 import LogoComponent from "@/Sections/LogoComponent/LogoComponent";
 import InfoComponent from "@/Sections/InfoComponent/InfoComponent";
 import { services } from "@/source";
+import { useSwipeable } from "react-swipeable"; 
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -14,6 +15,7 @@ const Header = () => {
   const handleToggleModal = () => {
     setIsModalOpen((prevState) => !prevState);
   };
+  
   
 
   const [isLogoModalOpen, setIsLogoModalOpen] = useState(false); 
@@ -24,7 +26,8 @@ const Header = () => {
   };
   
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 4; 
+  /*const itemsPerPage = 4; */
+  const [itemsPerPage, setItemsPerPage] = useState(4); 
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
       const scrollSpeedFactor = 0.5; 
@@ -40,6 +43,29 @@ const Header = () => {
       }
   };
 
+  
+
+  useEffect(() => {
+    const updateItemsPerPage = () => {
+      if (window.innerWidth <= 600) {
+        setItemsPerPage(8); // Для экранов шириной до 600px
+      } else {
+        setItemsPerPage(4); // Для всех остальных экранов
+      }
+    };
+  
+    updateItemsPerPage(); 
+    window.addEventListener("resize", updateItemsPerPage); 
+  
+    return () => window.removeEventListener("resize", updateItemsPerPage); // Удалить обработчик при размонтировании
+  }, []);
+
+  //обработчик свайпов:
+  const swipeHandlers = useSwipeable({
+    onSwipedUp: () => setIsModalOpen(true),
+    onSwipedDown: () => setIsModalOpen(false),
+    trackMouse: true,
+  });
   
   
 
@@ -111,7 +137,7 @@ const Header = () => {
 
             {/* Модальное окно с SecondComponent */}
             {isModalOpen && (
-              <div className="modal" onClick={handleToggleModal}>
+              <div className="modal" onClick={handleToggleModal} {...swipeHandlers}>
                 <div
                   className="modal__content"
                   onClick={(e) => e.stopPropagation()}
