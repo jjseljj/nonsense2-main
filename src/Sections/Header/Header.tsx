@@ -30,7 +30,7 @@ const Header = () => {
   const [itemsPerPage, setItemsPerPage] = useState(4); 
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-      const scrollSpeedFactor = 0.5; 
+      const scrollSpeedFactor = 0.001; 
 
       if (e.deltaY > 0 && startIndex + itemsPerPage < services.length) {
           setStartIndex((prev) =>
@@ -137,15 +137,20 @@ const Header = () => {
 
             {/* Модальное окно с SecondComponent */}
             {isModalOpen && (
-              <div className="modal" onClick={handleToggleModal} {...swipeHandlers}>
-                <div
-                  className="modal__content"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <SecondComponent />
-                </div>
+              <div
+              className="modal"
+              onClick={() => setIsModalOpen(false)} // Закрытие модального окна при клике на фон
+            >
+              <div
+                className="modal__content"
+                onMouseDown={(e) => e.stopPropagation()} // Остановка всплытия события на всех кликах
+              >
+                <SecondComponent />
               </div>
+            </div>
+            
             )}
+
 
           {/* Кнопка снизу */}
           {/*<div className="header-bottom">

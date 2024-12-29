@@ -13,6 +13,7 @@
         #1494D9 60%,      
         #022231 100%     
     );*/
+    pointer-events: auto;
 }  
   .header__background {
     position: absolute;
@@ -310,7 +311,9 @@
       pointer-events: auto;
       z-index: 2000;
     }
-    
+    .modal-open .button-right {
+      display: none; 
+    }
     .button-right__icon {
       width: 3.56vw; /* 67px */
       height: 3.93vw; /* 74px */
@@ -407,6 +410,7 @@
   animation: slideIn 0.3s ease-out;
   overflow: hidden;
   border-radius: 20px !important;
+  pointer-events: auto;
 }
 
   /* Стиль для модального окна логотипа */
@@ -424,6 +428,7 @@
 
   .modal-logo__content {
     text-align: center;
+    pointer-events: auto;
   }
 
   
@@ -460,6 +465,9 @@
         #022231 100%     
     );
     }  
+    .header-top {
+      height: 8% !important;
+    }
     .header__background {
       position: absolute;
       object-fit: cover; 
@@ -580,7 +588,7 @@
     .side-btn6,
     .side-btn7,
     .side-btn8 {
-      width: 86.46vw !important; /* 347.44px */
+      width: 83.46vw !important; /* 347.44px */
       height: 15.4vw !important; /* 82.84px */
       background: #340233;
       color: #ffffff;
@@ -592,7 +600,7 @@
       border-radius: 1.99vw; /* 11.92px */
       font-size: 0.85vw; /* 16px */
       cursor: pointer;
-      padding: 0 1.39vw !important;
+      padding: 0 1.39vw !important;   
     }
     .side-btn1,
     .side-btn2,
@@ -696,7 +704,7 @@
       pointer-events: auto;
       z-index: 2000;
     }
-    
+   
     .button-right__icon {
       width: 4.85vw; /* 19.48px */
       height: 4.72vw; /* 18.96px */
@@ -782,19 +790,19 @@
   
   
      
-  /* Стиль для модального окна сбоку */
-.modal {
-  position: fixed;
-  top: 5%;
-  right: 0;
-  width: 28.65vw; /* 550px в viewport width */
-  height: 90%;   
-  z-index: 1050;
-  animation: slideIn 0.3s ease-out;
-  overflow: hidden;
-  border-radius: 20px !important;
-}
-  
+    /* Стиль для модального окна сбоку */
+    .modal {
+      position: fixed;
+      top: 3%;
+      right: 0;
+      width: 88.65vw; /* 550px в viewport width */
+      height: 190.86vw !important; /* 718px */   
+      z-index: 1050;
+      animation: slideIn 0.3s ease-out;
+      overflow: hidden;
+      border-radius: 20px !important;
+    }
+    
     /* Стиль для модального окна логотипа */
     .modal-logo {
       position: fixed;
