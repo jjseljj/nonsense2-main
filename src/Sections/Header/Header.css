@@ -219,9 +219,9 @@
     
     .side-btn__title {
       font-family: 'Project Space', sans-serif;
-      font-size: 0.83vw; /* 16px */
+      font-size: 1.25vw;  /* 24px */
       font-weight: 400;
-      line-height: 1.11vw; /* 21.25px */
+      line-height: 1.66vw; /* 31.87px */
       text-align: left;
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
@@ -261,10 +261,11 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: #E4B832;
+      margin-left: 100px;
     }
     .side-btn__icon {
-      width: 1.38vw; /* 26px */
-      height: 0.69vw; /* 13px */
+      width: 1.51vw; /* 29px */
+  height: 1.30vw; /* 25px */
       color: #E4B832;
     }
     .side-btn__header, .center-btn__header {
@@ -277,7 +278,7 @@
       display: flex;
       align-items: center;
       gap: 0.43vw; /* 8px */
-      width: 18.24vw; /* 343px */
+      width: 667px; /* px */
       height: 3.35vw; /* 63px */
     }
     
@@ -402,7 +403,7 @@
   }
   .header-buttons {
     display: flex;
-    transform: translateX(-62%) translateY(0%);
+    transform: translateX(-62%) translateY(-15%);
     align-items: center;   
   }
   
@@ -633,6 +634,7 @@
       text-decoration-skip-ink: none;
       color: #E4B832;
       padding: 0.27vw; /* 5px */      
+      
     }
     .side-btn__description {
       font-family: 'Inter', sans-serif;
