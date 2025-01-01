@@ -14,39 +14,30 @@ interface ProductDetailsProps {
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView = "description" }) => {
   const [view, setView] = useState<string>(initialView);
-
-  const parsedProductId = Array.isArray(productId) ? productId[0] : productId;
-
-if (!parsedProductId) {
-  return <div>Товар не найден</div>;
-}
-
- // Получаем информацию о выбранном товаре
-const product = services.find((service) => service.id === parseInt(parsedProductId, 10));
-
+  const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
+  const [isFirstChecked, setIsFirstChecked] = useState(false);
+  const [isSecondChecked, setIsSecondChecked] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     setView(initialView); // Синхронизация состояния
   }, [initialView]);
 
-  const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
-  const handleLogoClick = () => {
-    setIsLogoModalOpen((prevState) => !prevState);
-  };
+  const parsedProductId = Array.isArray(productId) ? productId[0] : productId;
 
-  //чек
-  const [isFirstChecked, setIsFirstChecked] = useState(false);
-  const [isSecondChecked, setIsSecondChecked] = useState(false);
+  if (!parsedProductId) {
+    return <div>Товар не найден</div>;
+  }
 
-  const [isChecked, setIsChecked] = useState(false);
+  const product = services.find((service) => service.id === parseInt(parsedProductId, 10));
 
-
-
-
-  // Если товара с таким ID нет
   if (!product) {
     return <div>Товар не найден</div>;
   }
+
+  const handleLogoClick = () => {
+    setIsLogoModalOpen((prevState) => !prevState);
+  };
 
   
   return (
