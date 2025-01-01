@@ -6,9 +6,9 @@ const LogoComponent: React.FC = () => {
   return (
     <div className="logo-modal">
       {/* Иконка сверху */}
-      {/*<div className="logo-modal__icon">
+     <div className="logo-modal__icon">
         <img src="/лого.png" alt="Логотип" />
-      </div>*/}
+      </div>
       <div className="logo-modal__content">
         <p>
           Согласно Теории Большого Взрыва наша Вселенная произошла из одной

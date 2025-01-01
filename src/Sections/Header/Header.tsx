@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { BiDownArrow } from "react-icons/bi";
 import { IoIosArrowBack } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 import Link from 'next/link';
@@ -8,6 +7,7 @@ import LogoComponent from "@/Sections/LogoComponent/LogoComponent";
 import InfoComponent from "@/Sections/InfoComponent/InfoComponent";
 import { services } from "@/source";
 import { useSwipeable } from "react-swipeable"; 
+import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -50,14 +50,13 @@ const Header = () => {
       if (window.innerWidth <= 600) {
         setItemsPerPage(8); // Для экранов шириной до 600px
       } else {
-        setItemsPerPage(4); // Для всех остальных экранов
+        setItemsPerPage(5); // Для всех остальных экранов
       }
     };
   
     updateItemsPerPage(); 
     window.addEventListener("resize", updateItemsPerPage); 
   
-    return () => window.removeEventListener("resize", updateItemsPerPage); // Удалить обработчик при размонтировании
   }, []);
 
   //обработчик свайпов:
@@ -67,7 +66,20 @@ const Header = () => {
     trackMouse: true,
   });
   
-  
+  //переключение вкладок
+  const [activeTab, setActiveTab] = useState("price"); 
+
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab);
+  };
+
+  //раскрывающий список смена иконки
+  const [expandedIndexes, setExpandedIndexes] = useState<number[]>([]);
+  const handleToggle = (index: number) => {
+    setExpandedIndexes((prev) =>
+      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
+    );
+  };
 
   return (
     <header className={`header ${isModalOpen ? "modal-open" : ""}`}>
@@ -87,7 +99,7 @@ const Header = () => {
 
 
             <div className="top-btn2" onClick={handleLogoClick}>
-                <img src="/лого.png" alt="Лого" />
+                <img src="/Group 30.png" alt="Лого" />
             </div>
             
             {isLogoModalOpen && (
@@ -108,27 +120,61 @@ const Header = () => {
             </button>
           </div>
 
+           {/* Вкладки */}
+           <div className="header-buttons">
+            <button
+              className={`header-buttons__tab1 ${activeTab === "price" ? "active" : ""}`}
+              onClick={() => handleTabClick("price")}
+            >
+              Прайс
+            </button>
+            <button
+              className={`header-buttons__tab2 ${activeTab === "order" ? "active" : ""}`}
+              onClick={() => handleTabClick("order")}
+            >
+              На заказ
+            </button>
+          </div>
+
           {/* Центральные кнопки */}
-          <div className="header-scroll" onWheel={(e) => handleScroll(e)}>
-            {[...Array(itemsPerPage)].map((_, index) => {
-                const service = services[startIndex + index];
-                return (
-                <div key={index} className={`button-with-dot${index + 1}`}>
-                    <GoDotFill className={`side-btn__dot${index + 1}`} />
-                    <button className={`side-btn${index + 1}`}>
-                    <div className="side-btn__header">
-                        <div className="side-btn__title-wrapper">
-                        <span className="side-btn__title">{service?.title || "—"}</span>
-                        <BiDownArrow className="side-btn__icon" />
-                        </div>
-                        <span className="side-btn__price">{service?.price || "—"}</span>
-                    </div>
-                    <p className="side-btn__description">{service?.description || "—"}</p>
-                    </button>
-                </div>
-                );
-            })}
+          <div className="header-scroll">
+  {services.map((service, index) => {
+    const isExpanded = expandedIndexes.includes(index);
+
+    return (
+      <div key={index} className={`button${index + 1}`}>
+        <button
+          className={`side-btn`}
+          onClick={() => handleToggle(index)}
+        >
+          <div className="side-btn__header">
+            <div className="side-btn__title-wrapper">
+              <span className="side-btn__title">
+                {service?.title || "—"}
+              </span>
+              {isExpanded ? (
+                <BiUpArrow className="side-btn__icon" />
+              ) : (
+                <BiDownArrow className="side-btn__icon" />
+              )}
             </div>
+            <span className="side-btn__price">{service?.price || "—"}</span>
+          </div>
+          <p
+            className={`side-btn__description ${
+              isExpanded ? "expanded" : "collapsed"
+            }`}
+          >
+            {service?.description || "—"}
+          </p>
+        </button>
+      </div>
+    );
+  })}
+</div>
+
+
+
 
            {/* Кнопка сбоку справа */}
            <div className="button-right" onClick={handleToggleModal}>
@@ -147,17 +193,10 @@ const Header = () => {
               >
                 <SecondComponent />
               </div>
-            </div>
-            
-            )}
-
-
-          {/* Кнопка снизу */}
-          {/*<div className="header-bottom">
-            <button className="bottom-btn">
-                <img src="/стрелка.png" alt="Стрелка" className="bottom-btn__icon" />
-            </button>
-          </div>*/}
+            </div>      
+                  
+          )}
+      
 
         </div>
       </div>
