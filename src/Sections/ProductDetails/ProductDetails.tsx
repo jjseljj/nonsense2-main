@@ -14,6 +14,17 @@ interface ProductDetailsProps {
 
 const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView = "description" }) => {
   const [view, setView] = useState<string>(initialView);
+
+  const parsedProductId = Array.isArray(productId) ? productId[0] : productId;
+
+if (!parsedProductId) {
+  return <div>Товар не найден</div>;
+}
+
+ // Получаем информацию о выбранном товаре
+const product = services.find((service) => service.id === parseInt(parsedProductId, 10));
+
+
   useEffect(() => {
     setView(initialView); // Синхронизация состояния
   }, [initialView]);
@@ -29,8 +40,8 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
 
   const [isChecked, setIsChecked] = useState(false);
 
-  // Получаем информацию о выбранном товаре
-  const product = services.find((service) => service.id === parseInt(productId as string));
+
+
 
   // Если товара с таким ID нет
   if (!product) {

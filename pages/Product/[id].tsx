@@ -16,20 +16,22 @@ const Product = () => {
     }
   }, [view]);
 
-  if (!id) {
+  // Проверяем готовность маршрутизатора
+  if (!router.isReady || !id) {
     return <div>Загрузка...</div>; 
   }
 
+  // Обрабатываем случай, если id может быть массивом
+  const productId = Array.isArray(id) ? id[0] : id;
+
   return (
     <>
-      <ProductDetails productId={id as string} initialView={activeView} />
+      <ProductDetails productId={productId} initialView={activeView} />
     </>
   );
 };
 
 export default Product;
-
-
 
 /*
 http://localhost:3001/Product/id?view=form
