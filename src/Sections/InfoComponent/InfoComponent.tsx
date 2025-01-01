@@ -29,19 +29,19 @@ const handleLogoClick = () => {
             </Link>
 
             <div className="info-top-btn2" onClick={handleLogoClick}>
-                <img src="/лого.png" alt="Лого" />
+                <img src="/Group 30.png" alt="Лого" />
             </div>
             
             {isLogoModalOpen && (
-            <div className="modal-logo" onClick={handleLogoClick}>
+              <div className="modal-logo-overlay" onClick={handleLogoClick}>
                 <div
-                className="modal-logo__content"
-                onClick={(e) => e.stopPropagation()}
+                  className="modal-logo"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                <LogoComponent />
+                  <LogoComponent onClose={() => setIsLogoModalOpen(false)} />
                 </div>
-            </div>
-            )}     
+              </div>
+            )}
 
             <button className="info-top-btn3">
                 <Link href="/Info">

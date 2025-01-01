@@ -1,7 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-const LogoComponent: React.FC = () => {
+// Добавляем тип для пропса onClose
+interface LogoComponentProps {
+  onClose: () => void;
+}
+
+const LogoComponent: React.FC<{ onClose?: () => void }> = ({ onClose }) => {
+  const router = useRouter();
+  const [currentPath, setCurrentPath] = useState<string>("");
+
+  useEffect(() => {
+    setCurrentPath(router.asPath);
+  }, [router.asPath]);
+
   
   return (
     <div className="logo-modal">
@@ -30,10 +43,18 @@ const LogoComponent: React.FC = () => {
           Увидеть метаморфозы настоящего превращения, узнать кое-что о себе,
           раздать всем по заслугам и спасти планету можно здесь*.
         </p>
-        <br />
+        <p>========</p>      
         <p>Администратор</p>
       </div>
       <div className="logo-modal__footer">
+      <button
+        className="logo-modal__back-button"
+        onClick={() => {
+          onClose?.(); 
+        }}
+      >
+        Назад
+      </button>
         <Link href="/" className="logo-modal__link">
             Вернуться на главную
         </Link>

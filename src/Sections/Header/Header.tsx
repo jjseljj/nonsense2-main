@@ -8,6 +8,7 @@ import InfoComponent from "@/Sections/InfoComponent/InfoComponent";
 import { services } from "@/source";
 import { useSwipeable } from "react-swipeable"; 
 import { BiDownArrow, BiUpArrow } from "react-icons/bi";
+import { MdArrowForwardIos } from "react-icons/md";
 
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -125,15 +126,16 @@ const Header = () => {
             </div>
             
             {isLogoModalOpen && (
-            <div className="modal-logo" onClick={handleLogoClick}>
+              <div className="modal-logo-overlay" onClick={handleLogoClick}>
                 <div
-                className="modal-logo__content"
-                onClick={(e) => e.stopPropagation()}
+                  className="modal-logo"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                <LogoComponent />
+                  <LogoComponent onClose={() => setIsLogoModalOpen(false)} />
                 </div>
-            </div>
-            )}              
+              </div>
+            )}
+ 
 
             <button className="top-btn3">
                 <Link href="/Info">
@@ -198,29 +200,30 @@ const Header = () => {
           </div>
 
 
-
-
            {/* Кнопка сбоку справа */}
            <div className="button-right" onClick={handleToggleModal}>
-              <IoIosArrowBack className="button-right__icon" />
+              {isModalOpen ? (
+                <MdArrowForwardIos className="button-right__icon" />
+              ) : (
+                <IoIosArrowBack className="button-right__icon" />
+              )}
             </div>
-
             {/* Модальное окно с SecondComponent */}
             {isModalOpen && (
-              <div
-              className="modal"
-              onClick={() => setIsModalOpen(false)} // Закрытие модального окна при клике на фон
-            >
-              <div
-                className="modal__content"
-                onMouseDown={(e) => e.stopPropagation()} // Остановка всплытия события на всех кликах
+              <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
+                <div
+                className="modal"
+                onClick={() => setIsModalOpen(false)} // Закрытие модального окна при клике на фон
               >
-                <SecondComponent />
+                <div
+                  className="modal__content"
+                  onMouseDown={(e) => e.stopPropagation()} // Остановка всплытия события на всех кликах
+                >
+                  <SecondComponent />
+                </div>
               </div>
-            </div>      
-                  
-          )}
-      
+            </div>                     
+          )}      
 
         </div>
       </div>

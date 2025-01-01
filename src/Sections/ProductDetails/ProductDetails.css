@@ -38,6 +38,9 @@
     pointer-events: none;
     z-index: 1;
     border-radius: 1.04vw !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .product-details__border::before {
@@ -164,7 +167,7 @@
     justify-content: space-around;
     flex-direction: row-reverse;
     align-items: center;
-    padding: 1.04vw; /* 20px */
+    transform: translateX(-48%) translateY(0%);   
   }
   
   .product-details__tab {
@@ -177,7 +180,7 @@
   }
   .product-details__wrapper {
     width: 54.9vw; /* 1054px */
-    height: 40.21vw; /* 772px */
+    height: 37.21vw; /* px */
     border: 3px solid #E4B832;
     background: #380F2C;
     margin: 0 auto;
@@ -200,9 +203,10 @@
 }
 
 .product-details__tab1 {
-    width: 12.76vw; /* 245px */
+    width: 18.85vw; /* 362px */
     height: 3.59vw; /* 69px */
-    background: #E4B832;
+    background: #380F2CCC;
+    border: 1px solid #FCFC26 !important;
     font-family: 'Project Space', sans-serif;
     font-size: 1.04vw; /* 20px */
     font-weight: 400;
@@ -215,19 +219,17 @@
     pointer-events: auto;
     cursor: pointer;
     z-index: 10;
-    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 0 100%);
-    /*border-top-left-radius: 1.04vw; /* 20px */
-    /*transform: translateX(12%) translateY(0%);*/
-    border-radius: 0.52vw; /* 10px */
-    clip-path: none;
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%);   
+    transform: translateX(-13%) translateY(0%);    
+    /*clip-path: none;*/
   }
   .product-details__tab2 {
-    position: relative; 
-    width: 18.85vw; /* 362px */
+    position: relative;     
+    width: 12.76vw; /* 245px */
     height: 3.59vw; /* 69px */
     background: #380F2CCC;
     opacity: 0.8;
-    border: 1px solid #FCFC26;
+    border: 1px solid #FCFC26 !important;
     font-family: 'Project Space', sans-serif;
     font-size: 1.04vw; /* 20px */
     font-weight: 400;
@@ -242,15 +244,17 @@
     pointer-events: auto;
     cursor: pointer;
     z-index: 10;
-    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 20px 100%);
-     display: inline-block;
-     clip-path: none;
-     border-radius: 0.52vw; /* 10px */
+    clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 100%, 0 100%);
+    border-top-left-radius: 1.04vw; 
+    display: inline-block;
+    /*clip-path: none;
+    border-radius: 0.52vw; /* 10px */    
   }
 
   .product-details__tab1.active,
   .product-details__tab2.active {
     box-shadow: 0 0 30px rgba(228, 184, 50, 0.8) !important;
+    background: #E4B832;
     position: relative;
     z-index: 10;
     pointer-events: auto !important;
@@ -456,6 +460,48 @@
   border-top-right-radius: 1.04vw; /* 20px */
   border-bottom-right-radius: 1.04vw; /* 20px */
   cursor: pointer;
+  pointer-events: auto;
+  padding: 0 20px; 
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 0.8333vw; /* 16px */
+  color: #ffffff;
+}
+.price-actions__button-empty:focus {
+  outline: none; 
+  box-shadow: none; 
+}
+.price-actions__button-empty::-webkit-outer-spin-button,
+.price-actions__button-empty::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.price-actions__button-empty[type=number] {
+  -moz-appearance: textfield;
+}
+
+.price-actions__button-empty-1 {
+  width: 26.09vw; /* 501px */
+  height: 3.44vw; /* 66px */
+  background: none;
+  border: 1px solid #E4B832;
+  border-top-right-radius: 1.04vw; /* 20px */
+  border-bottom-right-radius: 1.04vw; /* 20px */
+  cursor: pointer;
+  pointer-events: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  color: #E4B832;
+  font-family: 'Project Space', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 53.12px;
+  text-align: center;
+
 }
 
 
@@ -509,11 +555,38 @@
   text-transform: uppercase;
 }
 .product-details__price-email {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  pointer-events: auto;
+}
+.product-details__email-input {
+  /*width: vw; /* 968px */
+  height: 3.44vw; /* 66px */
+  width: 97%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #E4B832;
+  border-radius: 1.04vw; /* 20px */
+  background: none;
+  color: #000;
+  pointer-events: auto;
+  padding: 1.04vw; /* 20px */
+  font-size: 0.73vw; /* 14px */
+  color: #ffffff;
+}
+.product-details__email-input:focus { 
+  outline: none; 
+}
+
+
+/*.product-details__price-email {
   width: 107%;
   display: flex;
   flex-direction: row;
   pointer-events: auto;
-}
+}*/
 .product-details__email-prefix {
   width: 25.36vw; /* 487px */
   height: 3.44vw; /* 66px */

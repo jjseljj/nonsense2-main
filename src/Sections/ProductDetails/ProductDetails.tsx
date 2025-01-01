@@ -39,6 +39,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
     setIsLogoModalOpen((prevState) => !prevState);
   };
 
+  // Обработчик клика по кнопке
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Заголовок",
+          text: "Описание для分享",
+          url: "https://example.com", // тут указываете ссылку
+        });
+        console.log("Успешный шэринг!");
+      } catch (error) {
+        console.error("Ошибка при шэринге:", error);
+      }
+    } else {
+      alert("Ваш браузер не поддерживает Web Share API.");
+    }
+  };
+
   
   return (
     <div className="product-details">
@@ -46,22 +64,24 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
         <img src="/images/3.png" alt="Background" className="header__background" />
         <div className="product-details__border">
           <div className="header-top">
-            <button className="top-btn1">
-              <img src="/Поделиться.png" alt="Поделиться" />
-            </button>
+            <button className="top-btn1" onClick={handleShare}>
+                  <img src="/Поделиться.png" alt="Поделиться" />
+              </button>  
+
             <div className="top-btn2" onClick={handleLogoClick}>
-              <img src="/лого.png" alt="Лого" />
+              <img src="/Group 30.png" alt="Лого" />
             </div>
             {isLogoModalOpen && (
-              <div className="modal-logo" onClick={handleLogoClick}>
+              <div className="modal-logo-overlay" onClick={handleLogoClick}>
                 <div
-                  className="modal-logo__content"
+                  className="modal-logo"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  <LogoComponent />
+                  <LogoComponent onClose={() => setIsLogoModalOpen(false)} />
                 </div>
               </div>
             )}
+
             <button className="top-btn3">
               <Link href="/Info">
                 <img src="/Информация.png" alt="Информация" />
@@ -69,7 +89,6 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
             </button>
           </div>
 
-          <div className="product-details__wrapper">
             <div className="product-details__header">
               <button
                 className={`product-details__tab1 ${
@@ -87,6 +106,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
               </button>
             </div>
 
+
+          <div className="product-details__wrapper">
+           
             <div className="product-details__content">
               {view === "description" ? (
                 <div className="product-details__price">
@@ -94,9 +116,9 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                     <div className="product-details__price-name">
                       <h2>Написать</h2>
                     </div>
-                    <div className="product-details__price-amount">
+                    {/*<div className="product-details__price-amount">
                       <span>100</span>
-                    </div>
+                    </div>*/}
                   </div>
                   <div className="product-details__price-description">
                     <textarea
@@ -107,7 +129,11 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                   </div>
                   <div className="product-details__price-actions">
                     <button className="price-actions__button-rate">Оценить</button>
-                    <button className="price-actions__button-empty"></button>
+                    <input
+                      type="number"
+                      className="price-actions__button-empty"
+                      placeholder="Введите количество"                     
+                    />
                   </div>
 
                   <div className="product-details__price-delivery-option">
@@ -137,6 +163,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                   </div>
 
                   <div className="product-details__price-email">
+                    <input
+                      type="email"
+                      placeholder="example@domain.com"
+                      className="product-details__email-input"
+                    />
+                  </div>
+
+                  {/*<div className="product-details__price-email">
                   <div className="product-details__email-prefix">
                     <input
                       type="text"
@@ -154,7 +188,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                         className="product-details__email-domain-input"
                       />
                     </div>
-                  </div>
+                  </div>*/}
 
                   <div
                       className="item2"
@@ -197,7 +231,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                   </div>    
                   <div className="product-details__price-actions">
                     <button className="price-actions__button-rate">Оценить</button>
-                    <button className="price-actions__button-empty"></button>
+                    <span className="price-actions__button-empty-1">{product.price}</span>
                   </div>
 
                   <div className="product-details__price-delivery-option">
@@ -227,6 +261,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                   </div>
 
                   <div className="product-details__price-email">
+                    <input
+                      type="email"
+                      placeholder="example@domain.com"
+                      className="product-details__email-input"
+                    />
+                  </div>
+
+                  {/*<div className="product-details__price-email">
                   <div className="product-details__email-prefix">
                     <input
                       type="text"
@@ -244,7 +286,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
                         className="product-details__email-domain-input"
                       />
                     </div>
-                  </div>
+                  </div>*/}
 
                   <div
                       className="item2"
