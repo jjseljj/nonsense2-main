@@ -22,12 +22,13 @@ const Product = () => {
 
   return (
     <>
-      <ProductDetails productId={id} initialView={activeView} />
+      <ProductDetails productId={id as string} initialView={activeView} />
     </>
   );
 };
 
 export default Product;
+
 
 
 /*

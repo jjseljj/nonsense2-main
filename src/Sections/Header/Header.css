@@ -669,6 +669,7 @@
       width: 1.38vw; /* 26px */
       height: 0.69vw; /* 13px */
       color: #E4B832;
+      pointer-events: none;
     }
     .side-btn__header, .center-btn__header {
       display: flex;     
