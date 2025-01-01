@@ -81,6 +81,24 @@ const Header = () => {
     );
   };
 
+  // Обработчик клика по кнопке
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Заголовок",
+          text: "Описание для分享",
+          url: "https://example.com", // тут указываете ссылку
+        });
+        console.log("Успешный шэринг!");
+      } catch (error) {
+        console.error("Ошибка при шэринге:", error);
+      }
+    } else {
+      alert("Ваш браузер не поддерживает Web Share API.");
+    }
+  };
+
   return (
     <header className={`header ${isModalOpen ? "modal-open" : ""}`}>
       {/* Блок с картинкой и содержимым */}
@@ -91,11 +109,15 @@ const Header = () => {
         <div className="header__border">
           {/* Кнопки сверху */}
           <div className="header-top">
-            <Link href="/Product">
+              <button className="top-btn1" onClick={handleShare}>
+                  <img src="/Поделиться.png" alt="Поделиться" />
+              </button>  
+
+            {/*<Link href="/Product">
               <button className="top-btn1">
                   <img src="/Поделиться.png" alt="Поделиться" />
               </button>  
-            </Link>
+            </Link>*/}
 
 
             <div className="top-btn2" onClick={handleLogoClick}>
@@ -138,40 +160,42 @@ const Header = () => {
 
           {/* Центральные кнопки */}
           <div className="header-scroll">
-  {services.map((service, index) => {
-    const isExpanded = expandedIndexes.includes(index);
+            {services.map((service, index) => {
+              const isExpanded = expandedIndexes.includes(index);
 
-    return (
-      <div key={index} className={`button${index + 1}`}>
-        <button
-          className={`side-btn`}
-          onClick={() => handleToggle(index)}
-        >
-          <div className="side-btn__header">
-            <div className="side-btn__title-wrapper">
-              <span className="side-btn__title">
-                {service?.title || "—"}
-              </span>
-              {isExpanded ? (
-                <BiUpArrow className="side-btn__icon" />
-              ) : (
-                <BiDownArrow className="side-btn__icon" />
-              )}
-            </div>
-            <span className="side-btn__price">{service?.price || "—"}</span>
+              return (
+                <div key={index} className={`button${index + 1}`}>
+                  <Link href={`/Product/${service.id}?view=form`}>
+                  <button
+                    className={`side-btn`}
+                    onClick={() => handleToggle(index)}
+                  >
+                    <div className="side-btn__header">
+                      <div className="side-btn__title-wrapper">
+                        <span className="side-btn__title">
+                          {service?.title || "—"}
+                        </span>
+                        {isExpanded ? (
+                          <BiUpArrow className="side-btn__icon" />
+                        ) : (
+                          <BiDownArrow className="side-btn__icon" />
+                        )}
+                      </div>
+                      <span className="side-btn__price">{service?.price || "—"}</span>
+                    </div>
+                    <p
+                      className={`side-btn__description ${
+                        isExpanded ? "expanded" : "collapsed"
+                      }`}
+                    >
+                      {service?.description || "—"}
+                    </p>
+                  </button>
+                  </Link>
+                </div>
+              );
+            })}
           </div>
-          <p
-            className={`side-btn__description ${
-              isExpanded ? "expanded" : "collapsed"
-            }`}
-          >
-            {service?.description || "—"}
-          </p>
-        </button>
-      </div>
-    );
-  })}
-</div>
 
 
 

@@ -162,6 +162,7 @@
   .product-details__header {
     display: flex;
     justify-content: space-around;
+    flex-direction: row-reverse;
     align-items: center;
     padding: 1.04vw; /* 20px */
   }
@@ -638,6 +639,21 @@
   align-items: center;
   pointer-events: auto;
 }
+.product-details__price-actions-bottom {
+  display: flex; 
+  align-items: center;
+  gap: 20px;
+}
+.back-home__button {
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 29.05px;
+  text-align: left;
+  color: #E4B832;
+  text-decoration: none; 
+}
+
 
 @media (max-width: 900px) {
   .product-details {

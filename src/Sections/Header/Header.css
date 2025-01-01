@@ -137,8 +137,8 @@
       background: none;
       border: none;
       position: absolute;
-      top: 10px;
-      left: -740px;
+      top: 0.52vw; /* 10px */
+      left: -42.54vw; /*  */
       transform: none; 
       z-index: 2;
       pointer-events: auto;
@@ -159,7 +159,7 @@
       background: none;
       border: none;
       position: absolute;
-      top: 15px;
+      top: 0.78vw; /* 15px */
       position: relative;
       z-index: 10000; 
       background-color: transparent;
@@ -182,8 +182,8 @@
       background: none;
       border: none;
       position: absolute;
-      top: 10px;
-      left: 790px;
+      top: 0.52vw; /* 10px */
+      left: 46.15vw; /*  */
       transform: none; 
       z-index: 2;
       pointer-events: auto;
@@ -196,8 +196,8 @@
     }  
    
   .side-btn {
-      width: 1071px !important; /* 1071px */
-      height: 113px !important; /* 123px, когда не раскрыта */
+      width: 55.78vw !important; /* 1071px */
+      height: 5.89vw !important; /* 113px */
       background: #06002A;
       color: #ffffff;
       display: flex;
@@ -208,13 +208,14 @@
       border-radius: 1.06vw; /* 20px */
       font-size: 0.85vw; /* 16px */
       cursor: pointer;   
-      padding: 0 20px;    
+      padding: 0 1.04vw; /* 20px */
+      text-decoration: none !important;
     }
     .button{
       width: 59.06vw !important; /* 1071px */
     }
     .side-btn.expanded {
-      height: 176px !important; /* 176px, когда раскрыта */
+      height: 0.092vw !important; /* 176px когда раскрыта */
   }
     
     .side-btn__title {
@@ -226,8 +227,7 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: #E4B832;
-      padding: 0.27vw; /* 5px */
-      
+      padding: 0.27vw; /* 5px */      
     }
     .side-btn__description {
       font-family: 'Inter', sans-serif;
@@ -238,7 +238,6 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: #FFFFFF;
-
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -261,19 +260,22 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: #E4B832;
-      margin-left: 100px;
+      margin-left: 5.21vw; /* 100px */
     }
     .side-btn__icon {
       width: 1.51vw; /* 29px */
-  height: 1.30vw; /* 25px */
+      height: 1.30vw; /* 25px */
       color: #E4B832;
     }
     .side-btn__header, .center-btn__header {
       display: flex;     
       align-items: center;
       width: 100%;
+      
     }
-    
+    .button{
+      text-decoration: none !important;
+    }
     .side-btn__title-wrapper, .center-btn__title-wrapper {
       display: flex;
       align-items: center;
@@ -334,21 +336,21 @@
      
   
   /* Стиль для модального окна сбоку */
-.modal {
-  position: fixed;
-  top: 5%;
-  right: 0;
-  width: 28.65vw; /* 550px в viewport width */
-  height: 90%;   
-  z-index: 1050;
-  animation: slideIn 0.3s ease-out;
-  overflow: hidden;
-  border-radius: 20px !important;
-  pointer-events: auto;
-}
+  .modal {
+    position: fixed;
+    top: 5%;
+    right: 0;
+    width: 28.65vw; /* 550px в viewport width */
+    height: 90%;   
+    z-index: 1050;
+    animation: slideIn 0.3s ease-out;
+    overflow: hidden;
+    border-radius: 20px !important;
+    pointer-events: auto;
+  }
 
   /* Стиль для модального окна логотипа */
-.modal-logo {
+  .modal-logo {
     position: fixed;
     top: 0%;
     left: 50%;
@@ -379,31 +381,31 @@
     z-index: 10;
     pointer-events: auto;
    /* transform: translateX(00%) translateY(-5%);*/
-    width: 1234px;   
-    height: 675px !important;
+    width: 64.27vw; /* 1234px */
+    height: 35.16vw !important; /* 675px */
     background: #15001561;
-    border-radius: 0 40px 40px 40px; 
-    backdrop-filter: blur(19.7px);
+    border-radius: 0 2.08vw 2.08vw 2.08vw; /* 0 40px 40px 40px */
+    backdrop-filter: blur(10.7px); /* в макете 19*/
     box-shadow: 0px -8px 80.6px 0px #E4B832;
     overflow-y: auto;
     scrollbar-width: thin;
     scrollbar-color: #C8A131 #06002A;
-    padding: 20px;
-    gap: 15px;
-    margin-top: -15px;   
+    padding: 1.04vw; /* 20px */
+    gap: 0.78vw; /* 15px */
+    margin-top: -0.78vw; /* -15px */ 
   }
   .header-scroll::-webkit-scrollbar {
-    width: 19px;
+    width: 0.99vw; /* 19px */
     background: #06002A;
   }
   
   .header-scroll::-webkit-scrollbar-thumb {
     background: #C8A131;
-    border-radius: 40px;
+    border-radius: 2.08vw; /* 40px */
   }
   .header-buttons {
     display: flex;
-    transform: translateX(-62%) translateY(-15%);
+    transform: translateX(-52%) translateY(-20%);
     align-items: center;   
   }
   
@@ -453,6 +455,9 @@
   .header-buttons__tab2.active {
     box-shadow: 0 0 20px rgba(228, 184, 50, 0.8);
     z-index: 10;
+  }
+  .header-scroll a {
+    text-decoration: none; 
   }
   
   

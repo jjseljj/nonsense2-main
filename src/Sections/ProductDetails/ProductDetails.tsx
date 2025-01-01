@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import LogoComponent from "@/Sections/LogoComponent/LogoComponent";
 import { FaRegSquare, FaRegCheckSquare } from "react-icons/fa";
 import { LuPower } from "react-icons/lu";
 import { MdOutlineAlternateEmail } from "react-icons/md";
+import { services } from "@/source";
 
-const ProductDetails: React.FC = () => {
-  const [view, setView] = useState("description");
+
+interface ProductDetailsProps {
+  productId: string | string[] | undefined;
+  initialView?: string;
+}
+
+const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView = "description" }) => {
+  const [view, setView] = useState<string>(initialView);
+  useEffect(() => {
+    setView(initialView); // Синхронизация состояния
+  }, [initialView]);
 
   const [isLogoModalOpen, setIsLogoModalOpen] = useState(false);
   const handleLogoClick = () => {
@@ -19,6 +29,15 @@ const ProductDetails: React.FC = () => {
 
   const [isChecked, setIsChecked] = useState(false);
 
+  // Получаем информацию о выбранном товаре
+  const product = services.find((service) => service.id === parseInt(productId as string));
+
+  // Если товара с таким ID нет
+  if (!product) {
+    return <div>Товар не найден</div>;
+  }
+
+  
   return (
     <div className="product-details">
       <div className="product-details__image-wrapper">
@@ -56,13 +75,13 @@ const ProductDetails: React.FC = () => {
                 }`}
                 onClick={() => setView("description")}
               >
-                Прайс
+                На заказ               
               </button>
               <button
                 className={`product-details__tab2 ${view === "form" ? "active" : ""}`}
                 onClick={() => setView("form")}
               >
-                На заказ
+                Прайс                
               </button>
             </div>
 
@@ -148,6 +167,9 @@ const ProductDetails: React.FC = () => {
                   </div>      
 
                    <div className="product-details__price-actions-bottom">
+                    <div className="product-details__back-home">
+                      <Link href="/" className="back-home__button">На главную</Link>
+                    </div>
                     
                     <button className="product-details__price-icon">
                       <div className="payment-button__content">
@@ -163,36 +185,92 @@ const ProductDetails: React.FC = () => {
                 </div>
               ) : (
                 <div className="product-details__description">
-                  <div className="product-details__description-title">
-                    <h2>Отбрось предрассудки, твори волшебство!</h2>
+                  <div className="product-details__description-title">                
+                    <h2>{product.title}</h2>
                   </div>
                   <div className="product-details__description-text">
                     <p className="product-details__description-paragraph">
-                      Настоящая фигня. Без красителей и заменителей. Гораздо круче той фигни,
-                      что вокруг продаётся и фигнёю зовётся. Экологически чистая - не портит
-                      воздух, не загрязняет воду, её не повезёт вонючий грузовик, для неё не
-                      выпилят зелёный лес. Годится как экологический подарок вместо любой
-                      другой фигни. Хотите потратить деньги на очередную пластмассовую фигню -
-                      покупайте лучше здесь! Дарите чистый воздух, зелёные леса, цветочные
-                      луга!
-                      
-                    </p>
-                    <br /> 
-                    <p className="product-details__description-paragraph">
-                      Отлично подходит в ситуации, когда всё не так, пора менять. Позволяет
-                      закинуть, задвинуть, затоптать, уничтожить, разобраться, посмеяться,
-                      обновиться, раскрутиться, начать сначала и всего остального. Ассортимент
-                      постоянно пополняется, если чего-то не хватает, есть замечательный раздел
-                      "На заказ" - пиши чего хочешь, плати сколько влезет. Уплочено - значит
-                      твоё. Для наилучшего результата имеет смысл повторить. И не забудь
-                      поделиться ссылкой.
-                    </p>
-                    <br /> 
-                    <p className="product-details__description-paragraph">Берегите чеки, остерегайтесь подделок!</p>
+                      {product.description}
+                    </p>           
+                  </div>    
+                  <div className="product-details__price-actions">
+                    <button className="price-actions__button-rate">Оценить</button>
+                    <button className="price-actions__button-empty"></button>
                   </div>
-                  <div className="product-details__description-button">
-                    <button>Оферта</button>
+
+                  <div className="product-details__price-delivery-option">
+                    <div
+                      className="item"
+                      onClick={() => setIsFirstChecked(!isFirstChecked)}
+                    >
+                      {isFirstChecked ? (
+                        <FaRegCheckSquare className="icon icon-checked" />
+                      ) : (
+                        <FaRegSquare className="icon icon-unchecked" />
+                      )}
+
+                      <span className="text text-first">Отпустить, пусть летит</span>
+                    </div>
+                    <div
+                      className="item"
+                      onClick={() => setIsSecondChecked(!isSecondChecked)}
+                    >
+                      {isSecondChecked ? (
+                        <FaRegCheckSquare className="icon icon-checked" />
+                      ) : (
+                        <FaRegSquare className="icon icon-unchecked" />
+                      )}
+                      <span className="text text-second">Отправить по адресу</span>
+                    </div>
                   </div>
+
+                  <div className="product-details__price-email">
+                  <div className="product-details__email-prefix">
+                    <input
+                      type="text"
+                      placeholder="example"
+                      className="product-details__email-prefix-input"
+                    />
+                  </div>
+                    <div className="product-details__email-symbol">
+                    <MdOutlineAlternateEmail className="email-icon" />
+                    </div>
+                    <div className="product-details__email-domain">
+                      <input
+                        type="text"
+                        placeholder="domain.com"
+                        className="product-details__email-domain-input"
+                      />
+                    </div>
+                  </div>
+
+                  <div
+                      className="item2"
+                      onClick={() => setIsChecked(!isChecked)}
+                    >
+                      {isChecked ? (
+                        <FaRegCheckSquare className="icon icon-checked" />
+                      ) : (
+                        <FaRegSquare className="icon icon-unchecked" />
+                      )}
+                      <span className="text">Запомнить</span>
+                  </div>      
+
+                   <div className="product-details__price-actions-bottom">
+                    <div className="product-details__back-home">
+                      <Link href="/" className="back-home__button">На главную</Link>
+                    </div>
+                    <button className="product-details__price-icon">
+                      <div className="payment-button__content">
+                        <div className="payment-button__text">Оплатить</div>
+                        <div className="payment-button__icon">
+                          <LuPower className="power-icon" />
+                        </div>
+                      </div>
+                    </button>
+
+                  </div>
+                               
                 </div>
               )}
             </div>
