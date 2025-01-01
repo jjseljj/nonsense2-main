@@ -24,6 +24,11 @@ const Product = () => {
   // Обрабатываем случай, если id может быть массивом
   const productId = Array.isArray(id) ? id[0] : id;
 
+  // Если productId отсутствует, показываем "Товар не найден"
+  if (!productId) {
+    return <div>Товар не найден</div>;
+  }
+
   return (
     <>
       <ProductDetails productId={productId} initialView={activeView} />

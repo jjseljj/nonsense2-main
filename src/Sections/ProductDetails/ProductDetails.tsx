@@ -20,7 +20,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
-    setView(initialView); // Синхронизация состояния
+    setView(initialView); 
   }, [initialView]);
 
   const parsedProductId = Array.isArray(productId) ? productId[0] : productId;
