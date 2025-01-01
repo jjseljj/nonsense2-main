@@ -215,12 +215,13 @@
   .info-content__block2 {
     width: 31.93vw; /* 613px */
     height: 7.4vw; /* 142px */
-    background: #340233;
+    background: #06002A;
     border: 1px solid #FCFC26;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1.04vw; /* 20px */
+    border-radius: 20px;
   }
   
   .info-content__block2 p {
@@ -238,10 +239,11 @@
   .info-content__block3 {
     width: 46.72vw; /* 897px */
     height: 25.1vw; /* 482px */
-    background: #340233;
+    background: #06002A;
     border: 1px solid #E4B832;    
     padding: 1.04vw; /* 20px */
     box-sizing: border-box;
+    border-radius: 20px;
   }
   
   .info-content__block3 p {

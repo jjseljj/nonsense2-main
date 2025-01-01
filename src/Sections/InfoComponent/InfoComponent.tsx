@@ -52,6 +52,7 @@ const handleLogoClick = () => {
 
           {/* Первый div с двумя вложенными div'ами */}
           <div className="info-component__content">
+            {/*
             <div className="info-content__block1">
               <div className="info-block1__child1">
                 <Link href="/Product" className="info-link">
@@ -63,7 +64,7 @@ const handleLogoClick = () => {
                   <p>На заказ</p>
                 </Link>
               </div>
-            </div>
+            </div>*/}
 
             {/* Второй div */}
             <div className="info-content__block2">
