@@ -116,9 +116,17 @@ const Header = () => {
                   <img src="/Поделиться.png" alt="Поделиться" />
               </button>  
 
-              <div className="top-btn2" onClick={handleLogoClick}>
-              <img src="/Group 30.png" alt="Лого" />
+            {/*<Link href="/Product">
+              <button className="top-btn1">
+                  <img src="/Поделиться.png" alt="Поделиться" />
+              </button>  
+            </Link>*/}
+
+
+            <div className="top-btn2" onClick={handleLogoClick}>
+                <img src="/Group 30.png" alt="Лого" />
             </div>
+            
             {isLogoModalOpen && (
               <div className="modal-logo-overlay" onClick={handleLogoClick}>
                 <div
@@ -129,6 +137,7 @@ const Header = () => {
                 </div>
               </div>
             )}
+ 
 
             <button className="top-btn3">
                 <Link href="/Info">
@@ -141,12 +150,7 @@ const Header = () => {
            <Link href={`/Product/1?view=form`}> 
               <button
                 className={`header-buttons__tab1 ${activeTab === "price" ? "active" : ""}`}
-                onClick={() => handleTabClick("price")}
-                style={{
-                  backgroundImage: `url('/path-to-price-bg.png')`, 
-                  backgroundRepeat: 'no-repeat',
-                  backgroundSize: 'cover',
-                }}
+                onClick={() => handleTabClick("price")}                
               >
                 Прайс
               </button>

@@ -477,8 +477,10 @@
   margin: 0;
 }
 
-.price-actions__button-empty[type=number] {
-  -moz-appearance: textfield;
+.price-actions__button-empty[type="number"] {
+  appearance: textfield; 
+  -moz-appearance: textfield; 
+  -webkit-appearance: none; 
 }
 
 .price-actions__button-empty-1 {
