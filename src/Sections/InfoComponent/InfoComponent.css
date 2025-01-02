@@ -582,22 +582,25 @@
       cursor: pointer;
     }
     .info-top-btn2 {
-      width: 151px; /* 151px */
-      height: 58.23px; /* 58.23px */
+      width: 65px !important; 
+      height: 23px  !important; 
       display: flex;
       align-items: center;
       justify-content: center;
-      background: none;
+      background: #06002A !important; 
       border: none;
-      transform: translateX(0%) translateY(-70%) !important;
+      border-radius: 9px !important; 
+      position: absolute;
+      top: 0vw !important; /* 15px */
       position: relative;
-      z-index: 2;
-      background-color: transparent;
+      z-index: 10000;    
       pointer-events: auto;
+      transform: translateX(0%) translateY(-140%) !important;
     }
     .info-top-btn2 img {
       display: block;
-      width: 100%;
+      width: 100% !important; 
+      height: 100%  !important; 
       height: auto;
       cursor: pointer;
     }
