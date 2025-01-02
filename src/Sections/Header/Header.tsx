@@ -110,13 +110,10 @@ const Header = () => {
               <button className="top-btn1" onClick={handleShare}>
                   <img src="/Поделиться.png" alt="Поделиться" />
               </button>  
+
               <div className="top-btn2" onClick={handleLogoClick}>
-                {window.innerWidth <= 600 ? (
-                  <img src="/Group 3_2.png" alt="Лого" />
-                ) : (
-                  <img src="/Group 30.png" alt="Лого" />
-                )}
-              </div>           
+              <img src="/Group 30.png" alt="Лого" />
+            </div>
             {isLogoModalOpen && (
               <div className="modal-logo-overlay" onClick={handleLogoClick}>
                 <div
@@ -126,7 +123,8 @@ const Header = () => {
                   <LogoComponent onClose={() => setIsLogoModalOpen(false)} />
                 </div>
               </div>
-            )} 
+            )}
+
             <button className="top-btn3">
                 <Link href="/Info">
                     <img src="/Информация.png" alt="Информация" />
