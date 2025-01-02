@@ -41,7 +41,7 @@ const Header = () => {
           );
       }
   }; 
-
+/*
   useEffect(() => {
     if (typeof window !== "undefined") {
       const updateItemsPerPage = () => {
@@ -59,7 +59,7 @@ const Header = () => {
         window.removeEventListener("resize", updateItemsPerPage);
       };
     }
-  }, []);
+  }, []);*/
 
   //обработчик свайпов:
   const swipeHandlers = useSwipeable({
