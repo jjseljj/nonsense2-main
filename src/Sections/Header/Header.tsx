@@ -43,17 +43,22 @@ const Header = () => {
   }; 
 
   useEffect(() => {
-    const updateItemsPerPage = () => {
-      if (window.innerWidth <= 600) {
-        setItemsPerPage(8); 
-      } else {
-        setItemsPerPage(5); 
-      }
-    };
+    if (typeof window !== "undefined") {
+      const updateItemsPerPage = () => {
+        if (window.innerWidth <= 600) {
+          setItemsPerPage(8); 
+        } else {
+          setItemsPerPage(5); 
+        }
+      };
   
-    updateItemsPerPage(); 
-    window.addEventListener("resize", updateItemsPerPage); 
+      updateItemsPerPage(); 
+      window.addEventListener("resize", updateItemsPerPage);
   
+      return () => {
+        window.removeEventListener("resize", updateItemsPerPage);
+      };
+    }
   }, []);
 
   //обработчик свайпов:

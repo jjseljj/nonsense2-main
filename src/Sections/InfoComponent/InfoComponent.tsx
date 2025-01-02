@@ -15,12 +15,12 @@ const handleLogoClick = () => {
 
  // Обработчик клика по кнопке
  const handleShare = async () => {
-  if (navigator.share) {
+  if (typeof navigator !== "undefined" && navigator.share) {
     try {
       await navigator.share({
         title: "Заголовок",
         text: "Описание для分享",
-        url: "https://example.com", // тут указываете ссылку
+        url: "https://example.com",
       });
       console.log("Успешный шэринг!");
     } catch (error) {
@@ -32,13 +32,14 @@ const handleLogoClick = () => {
 };
 
 
-const handleBack = () => {
-    if (window.history.length > 2) {
+  const handleBack = () => {
+    if (typeof window !== "undefined" && window.history.length > 2) {
       router.back(); // Возврат на предыдущую страницу
     } else {
       router.push("/"); // Если предыдущей страницы нет, перейти на главную
     }
   };
+
 
 
   return (
