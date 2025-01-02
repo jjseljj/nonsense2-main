@@ -64,7 +64,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ productId, initialView 
         <img src="/images/3.png" alt="Background" className="header__background" />
         <div className="product-details__border">
           <div className="header-top">
-            <button className="top-btn1" onClick={handleShare}>
+              <button className="top-btn1" onClick={handleShare}>
                   <img src="/Поделиться.png" alt="Поделиться" />
               </button>  
 

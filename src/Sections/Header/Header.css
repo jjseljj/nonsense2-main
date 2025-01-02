@@ -192,7 +192,7 @@
     }  
    
     .side-btn {
-      width: 55.78vw !important; /* 1071px */
+      width: 65.78vw !important; /*  55.78vw 1071px */
       height: 5.89vw !important; /* 113px */
       background: #06002A;
       color: #ffffff;
@@ -256,7 +256,7 @@
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
       color: #E4B832;
-      margin-left: 5.21vw; /* 100px */
+      margin-left: 15.21vw; /* 100px */
     }
     .side-btn__icon {
       width: 1.51vw; /* 29px */
@@ -314,7 +314,7 @@
       justify-content: center;
       align-items: center;
       cursor: pointer;
-      z-index: 1200;
+      z-index: 900;
       pointer-events: auto;     
       display: flex !important;
     }
@@ -399,8 +399,8 @@
     flex-direction: column;  
     z-index: 10;
     pointer-events: auto;
-    width: 64.27vw; /* 1234px */   
-    height: 35.16vw !important; /* 675px 
+    width: 74.27vw; /* 1234px */   
+    height: 35.16vw !important; /* 675px */
     background: #15001561;
     border-radius: 0 2.08vw 2.08vw 2.08vw; /* 0 40px 40px 40px */
     backdrop-filter: blur(10.7px); 
@@ -430,7 +430,7 @@
 
   .header-buttons {
     display: flex;
-    transform: translateX(-52%) translateY(-20%);
+    transform: translateX(-67.5%) translateY(-20%);
     align-items: center;       
   }
  
@@ -454,7 +454,7 @@
        H 0 
        Z"
     ); /* Добавление криволинейного скругления */
-    border-top-left-radius: 1.04vw; /* 20px */
+    border-top-left-radius: 1.04vw !important; /* 20px */
     pointer-events: auto;
     font-family: 'Project Space', sans-serif;
     font-size: 1.04vw; /* 20px */
@@ -648,16 +648,20 @@
     .header__border {
       position: absolute;
       top: 3%;
-      left: 3%;
+      left: 2%;
       width: 100% !important;
-      height: 100% !important;
-      /*width: 1120px;
-      height: 1474px;*/    
-      border-image-source: linear-gradient(208.21deg, #FCFC26 0.43%, #ED77A9 99.49%);
-      border-image-slice: 1;    
+      height: 100% !important;              
+      border-image-slice: 1;      
       pointer-events: none; 
       z-index: 1;
-      border-radius: 3.33vw; /* 20px */
+      border: 1px solid #FCFC26; 
+      border-radius: 1.06vw !important; /* 20px */        
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header__border::before {
+      content: none;
     }
     
   
@@ -679,19 +683,19 @@
     }
     
     .top-btn1 {
-      width: 13.67vw !important; /* 105px */
-      height: 9.77vw !important; /* 75px */
+      width: 75.01px !important;
+      height: 72.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
       position: absolute;
-      top: 2vw !important; /* 10px */
-      left: -30.54vw !important; /*  */
+      top: 3vw !important; /* 10px */
+      left: -36.5vw !important; 
       transform: none; 
       z-index: 2;
-      pointer-events: auto;
+      pointer-events: auto;      
     }   
     .top-btn1 img {
       display: block;
@@ -701,39 +705,40 @@
     }
     
     .top-btn2 {
-      width: 151px !important; 
-      height: 58.23px !important; 
+      width: 100% !important; 
+      height: 100%  !important; 
       display: flex;
       align-items: center;
       justify-content: center;
-      background: none;
+      background: #06002A !important; 
       border: none;
+      border-radius: 9px !important; 
       position: absolute;
-      top: 2.5vw !important; /* 15px */
+      top: 0vw !important; /* 15px */
       position: relative;
-      z-index: 10000; 
-      background-color: transparent;
-      border: none;
+      z-index: 10000;    
       pointer-events: auto;
+      transform: translateX(0%) translateY(-120%) !important;
     }
     .top-btn2 img {
-        display: block;
-        width: 100%;
-        height: auto;
-        cursor: pointer;
-      }
+      display: block;
+      width: 100% !important; 
+      height: 100%  !important; 
+      height: auto;
+      cursor: pointer;
+    }
       
     .top-btn3 {
-      width: 13.67vw !important; /* 105px */
-      height: 9.77vw !important; /* 75px */
+      width: 75.01px !important;
+      height: 72.7px !important;
       display: flex;
       align-items: center;
       justify-content: center;
       background: none;
       border: none;
       position: absolute;
-      top: 2vw !important; /* 10px */
-      left: 48.5vw !important; 
+      top: 3vw !important; /* 10px */
+      left: 40vw !important; 
       transform: none; 
       z-index: 2;
       pointer-events: auto;
@@ -743,6 +748,7 @@
       width: 100%;
       height: auto;
       cursor: pointer;
+      pointer-events: auto;
     }  
       
     .side-btn {
@@ -851,10 +857,10 @@
     .button-right {
       width: 4.95vw !important; /* 56.79px */
       height: 4.01vw !important; /* 58px */
-      background-color: #340233;
+      background-color: #06002A;
       position: absolute;
-      top: 22.23vw; /* 418px */
-      left: 91.9vw; /* 1725px */
+      top: 10.23vw; /* 418px */
+      left: 89.5vw; /* 1725px */
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
       border-top-right-radius: 0;
@@ -867,6 +873,9 @@
       pointer-events: auto;     
       display: flex !important;
     }
+    /*.button-right {
+      display: none !important;
+    }*/
     .modal-open .button-right {
       display: none; 
     }
@@ -877,7 +886,7 @@
       margin-right: 1.06vw; /* 20px */
     } 
     .modal-open .button-right {
-      transform: translateX(-1500%) translateY(900%);
+      transform: translateX(-1320%) translateY(900%);
       background: none;
     }  
      
@@ -886,12 +895,13 @@
       position: fixed;
       top: 3%;
       right: 0;
-      width: 88.65vw; /* 550px в viewport width */
+      width: 88.65vw; /* 550px */
       height: 190.86vw !important; /* 718px */   
       z-index: 1050;
       animation: slideIn 0.3s ease-out;
       overflow: hidden;
       border-radius: 20px !important;
+      transform: translateX(7%) translateY(0%);
     }
     
     /* Стиль для модального окна логотипа */
@@ -991,7 +1001,29 @@
       transform: translateX(-11%) translateY(0%);    
     }
   }
-
+  @media (max-width:414px) {
+     .top-btn1 {
+      width: 13.67vw !important; /* 105px */
+      height: 9.77vw !important; /* 75px */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: none;
+      border: none;
+      position: absolute;
+      top: 2vw !important; /* 10px */
+      left: -30.54vw !important; /*  */
+      transform: none; 
+      z-index: 2;
+      pointer-events: auto;
+    }   
+    .top-btn1 img {
+      display: block;
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+  }
     @media (max-width:402px) {
       .header {
         position: relative;
@@ -1089,8 +1121,8 @@
       
       
       .top-btn2 {
-        width: 151px !important; 
-        height: 58.23px !important; 
+        width: 13.67vw !important; /* 105px */
+        height: 9.77vw !important; /* 75px */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1265,7 +1297,7 @@
         margin-right: 1.06vw; /* 20px */
       } 
       .modal-open .button-right {
-        transform: translateX(-1500%) translateY(900%);
+        transform: translateX(-1400%) translateY(900%);
         background: none;
       }  
        

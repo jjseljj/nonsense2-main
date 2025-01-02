@@ -128,7 +128,7 @@
       border-radius: 20px;
       margin: 0 auto;
       position: relative; 
-      overflow: hidden;  
+      overflow: hidden;        
     } 
     .second-component__wrapper {
       width: 65.63vw; 
@@ -172,28 +172,30 @@
     }
   }
   @media (max-width: 402px) {
-    .second-component {   
-      background-size: cover;
-      width: 92.04vw; /* 370px */
-      height: 178.86vw; /* 718px */
-      border: 1px solid #FCFC26;
+    .second-component {
+      background: url('/images/2.png') no-repeat center top;
+      background-size: cover;   
+      width: 75.49vw !important; 
+      height: 85vh !important; /* 1229px */
+      border: 2px solid #FCFC26;
+      border-radius: 20px;
       margin: 0 auto;
-      position: relative;
-    }
-    
+      position: relative; 
+      overflow: hidden;  
+    } 
     .second-component__wrapper {
-      width: 76.37vw; /* 307px */
-      height: 131.84vw; /* 530px */
+      width: 65.63vw; 
+      height: 30.94vw; /* 238px */
       margin: 0 auto;
       position: relative;
-      margin-top: 19.9vw; /* 80px */
-    }
-    
+      margin-top: 4.6vw !important; /* 20px */
+      margin-left: 7.16vw; /* 55px */
+    }    
     .second-component__text {
       font-family: 'Inter', sans-serif;
-      font-size: 3.48vw; /* 14px */
+      font-size: 3.56vw !important; /* 12px */
       font-weight: 400;
-      line-height: 4.21vw; /* 16.94px */
+      line-height: 3.89vw !important; /* 14.52px */
       text-align: left;
       text-underline-position: from-font;
       text-decoration-skip-ink: none;
@@ -201,23 +203,27 @@
     }
     .second-component__actions {
       background: #E4B832;
-      width: 29.55vw; /* 118.77px */
-      height: 9.98vw; /* 40.1px */
+      width: 12.02vw !important; /* 154px */
+      height: 4.81vw !important; /* 54px */
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 4.98vw; /* 20px */
-      margin-top: 4.98vw; /* 20px */
+      border-radius: 1.04vw; /* 20px */
+      margin-top: 3.04vw; /* 20px */
     }
     
     .second-component__icon {
-      width: 7.46vw; /* 30px */
-      height: 7.46vw; /* 30px */
+      width: 4.03vw !important; /* 39px */
+      height: 3.03vw !important; /* 39px */
       background: #E4B832;
       border: 1px solid #E4B832;
     }
     .second-component__button {
       background: #E4B832;
       border: 1px solid #E4B832;  
+      pointer-events: auto;
     }
   }
+  
+
+  
